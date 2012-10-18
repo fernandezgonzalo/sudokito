@@ -9,8 +9,7 @@ public class test {
 	 * @throws SQLException 
 	 */
 	public static void main(String[] args) throws SQLException {
-		// TODO Auto-generated method stub
-//		dbAPI.newRowRank("pepe", 123);
+		//dbAPI.newRowRank("pepe", 123);
 //		dbAPI.newRowRank("jesu", 5);
 //		dbAPI.newRowRank("juan", 18);
 		dbAPI.newSave("010101010", 15);
