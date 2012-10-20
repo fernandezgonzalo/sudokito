@@ -23,11 +23,11 @@ public class dbAPI {
 		}
 	}
 
-	public static void newSave(String sudoku, int time) {
+	public static void newSave(String sudoku, int time, String sudokuInit, int dif) {
 		String query = "";
 		Statement stat = null;
 		try {
-			query = "INSERT INTO Save(sudoku, time) VALUES('" + sudoku + "', " + time + ");";
+			query = "INSERT INTO Save(sudoku, time, sudokuInit, dif) VALUES('" + sudoku + "', " + time + ", '" + sudokuInit + "', " + dif + ");";
 			stat = dbConn.getInstance().createStatement();
 			stat.executeUpdate(query);
 		} catch (Exception ex) {
@@ -41,7 +41,7 @@ public class dbAPI {
 		Statement stat = null;
 		ResultSet rs = null;
 		try {
-			query = "SELECT sudoku, time FROM Save";
+			query = "SELECT sudoku, time, sudokuInit, dif FROM Save";
 			stat = dbConn.getInstance().createStatement();
 			rs = stat.executeQuery(query);
 			// SELECT sudoku, time FROM Save;
