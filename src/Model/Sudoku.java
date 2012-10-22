@@ -14,6 +14,7 @@ public class Sudoku{
 	private String medio ="http://buurentriko.pythonanywhere.com/Medium/solve";
 	private String dificil ="http://buurentriko.pythonanywhere.com/Hard/solve";
 	
+	
 	public Sudoku (){
 		dificultad = "Easy";
 		strAux = Descarga.obtenerSemilla(facil);
