@@ -12,7 +12,7 @@ public class test {
 		//dbAPI.newRowRank("pepe", 123);
 //		dbAPI.newRowRank("jesu", 5);
 //		dbAPI.newRowRank("juan", 18);
-		dbAPI.newSave("010101010", 15, "12", 25);
+		//dbAPI.newSave("010101010", 15, "12", 25);
 //		ResultSet rs = dbAPI.getRank();
 //		while (rs.next()) {
 //			System.out.println("name: " + rs.getString("name"));
@@ -25,7 +25,7 @@ public class test {
 		System.out.println("sudoku: " + rs.getString("sudoku"));
 		System.out.println("time: " + rs.getInt("time"));
 		System.out.println("··························");
-		dbAPI.newSave("123", 14, "1", 15);
+//		dbAPI.newSave("123", 14, "1", 15);
 		
 	}
 
