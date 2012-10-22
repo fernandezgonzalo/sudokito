@@ -20,11 +20,11 @@ public class test {
 //			System.out.println("·······························");
 //			
 //		}
-		
-		ResultSet rs = dbAPI.getSave();
-		System.out.println("sudoku: " + rs.getString("sudoku"));
-		System.out.println("time: " + rs.getInt("time"));
-		System.out.println("··························");
+//		
+//		ResultSet rs = dbAPI.getSave();
+//		System.out.println("sudoku: " + rs.getString("));
+//		System.out.println("time: " + rs.getInt("time"));
+//		System.out.println("··························");
 //		dbAPI.newSave("123", 14, "1", 15);
 		
 	}
