@@ -3,7 +3,7 @@ package Model;
 import java.util.*;
 
 public class Parser {
-	static String[][] importar(String str) {
+	public static String[][] importar(String str) {
 		String[][] m = new String[9][9];
 		int cont = 0;
 		for (int i=0; i<9; i++){
@@ -16,7 +16,7 @@ public class Parser {
 		return m;
 	}
 
-	static String exportar(String[][] m) {
+	public static String exportar(String[][] m) {
 		String str = new String ();
 		for (int i=0; i<9; i++){
 			for (int j=0; j<9; j++){

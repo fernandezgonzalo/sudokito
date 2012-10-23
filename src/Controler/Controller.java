@@ -9,12 +9,12 @@ public class Controller {
 	private View1 vista;
 	private Sudoku juego;
 	
-	public void iniciarTablero (){
+	public void iniciarTablero(){
 		juego = new Sudoku (vista.dificultad());
 		vista.setTablero(juego.getTablero());
 	}
 	
-	public restart (){
+	public void restart(){
 		vista.setTablero(Parser.importar(juego.getSemilla()));
 		juego.restartTimeInic();
 	}
