@@ -145,6 +145,10 @@ public class Sudoku{
 	public String[][] getTablero(){
 		return tablero;
 	}
+	
+	public String getSemilla(){
+		return semilla;
+	}
 }
 /*
  * 
