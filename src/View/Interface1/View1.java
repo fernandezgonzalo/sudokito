@@ -2,6 +2,8 @@ package View.Interface1;
 
 import java.awt.Font;
 
+//import View.ViewDificultad1;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -17,7 +19,11 @@ import java.awt.Font;
  * @author Administrator
  */
 public class View1 extends javax.swing.JFrame {
-
+	ViewDificultad1 vd = new ViewDificultad1();
+	
+	public String getDificultad(){
+		return vd.getDificultad();
+	}
     /** Creates new form viewOne */
     public View1() {
         initComponents();

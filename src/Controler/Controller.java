@@ -11,6 +11,7 @@ public class Controller {
 	
 	public void iniciarTablero(){
 		juego = new Sudoku (vista.getDificultad());
+		
 		vista.setTablero(juego.getTablero());
 	}
 	
