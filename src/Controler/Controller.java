@@ -2,11 +2,11 @@ package Controler;
 
 import Model.Sudoku;
 import Model.Parser;
-import View.ViewOne;
+import View.Interface1.*;
 
 public class Controller {
 
-	private ViewOne vista;
+	private View1 vista;
 	private Sudoku juego;
 	
 	public void iniciarTablero (){

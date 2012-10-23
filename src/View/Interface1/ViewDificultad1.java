@@ -8,7 +8,7 @@
  *
  * Created on Oct 20, 2012, 5:07:35 PM
  */
-package View;
+package View.Interface1;
 
 /**
  *

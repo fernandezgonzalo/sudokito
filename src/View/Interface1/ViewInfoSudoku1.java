@@ -1,4 +1,4 @@
-package View;
+package View.Interface1;
 
 /*
  * To change this template, choose Tools | Templates
@@ -14,10 +14,10 @@ package View;
  *
  * @author Administrator
  */
-public class InfoSudoku1 extends javax.swing.JFrame {
+public class ViewInfoSudoku1 extends javax.swing.JFrame {
 
     /** Creates new form infoSudoku */
-    public InfoSudoku1() {
+    public ViewInfoSudoku1() {
         initComponents();
     }
 
