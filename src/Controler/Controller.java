@@ -2,9 +2,11 @@ package Controler;
 
 import Model.Sudoku;
 import Model.Parser;
+import View.ViewOne;
 
 public class Controller {
-	//falta inicializar la vista
+
+	private ViewOne vista;
 	private Sudoku juego;
 	
 	public void iniciarTablero (){
@@ -14,5 +16,6 @@ public class Controller {
 	
 	public restart (){
 		vista.setTablero(Parser.importar(juego.getSemilla()));
+		juego.restartTimeInic();
 	}
 }

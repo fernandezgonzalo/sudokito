@@ -93,4 +93,25 @@ public class Timer{
 	private int minASeg (int m){
 		return m*60;
 	}	
+////////////////////////////////////////////////////////////////////////
+	public boolean esCero (){
+		if (hora==0&&minutos==0&&segundos==0) return true;
+		else return false;
+		
+	}
+////////////////////////////////////////////////////////////////////////
+	public String suma (Timer t){
+		int seg = t.getSegundos()+minASeg(t.getMinutos())+horaASeg(t.getHora());
+		int seg2 = segundos+minASeg(minutos)+horaASeg(hora);
+		int seg3 = seg+seg2;
+		String result="";
+		int hs = seg3/3600;
+		result = result+hs+":";
+		seg3 = seg3-(hs*3600);
+		int m = seg3/60;
+		result = result+m+":";
+		seg3 = seg3-(m*60);
+		result = result+seg3;
+		return result;
+	}
 }

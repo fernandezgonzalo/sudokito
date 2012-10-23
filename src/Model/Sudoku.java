@@ -149,6 +149,25 @@ public class Sudoku{
 	public String getSemilla(){
 		return semilla;
 	}
+////////////////////////////////////////////////////////////////////////	
+	public void restartTimeInic (){
+		tiempoInicial.obtenerHoraSys();
+	}
+	
+	public void restartTime (){
+		tiemoTranscurrido = new Timer();
+	}
+	
+	public String calcularTiempo (){
+		Timer aux = new Timer();
+		aux.obtenerHoraSys();
+		String tiempo = tiempoInicial.calcularDiferencia(aux);
+		if (!tiemoTranscurrido.esCero()){
+			Timer tiempo1 = new Timer(tiempo);
+			return tiemoTranscurrido.suma(tiempo1);
+		}else
+			return tiempo;
+	}
 }
 /*
  * 
