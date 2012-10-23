@@ -20,6 +20,16 @@ public class ViewDificultad1 extends javax.swing.JFrame {
     public ViewDificultad1() {
         initComponents();
     }
+    
+    public String getDificultad(){
+        String dificultad;
+	if (jComboBox1.getSelectedItem()== "------------------"){
+            dificultad="Easy";
+	}else{
+            dificultad=(String) jComboBox1.getSelectedItem();
+	}
+            return dificultad;
+    }
 
     /** This method is called from within the constructor to
      * initialize the form.

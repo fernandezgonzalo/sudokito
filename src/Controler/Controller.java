@@ -10,12 +10,16 @@ public class Controller {
 	private Sudoku juego;
 	
 	public void iniciarTablero(){
-		juego = new Sudoku (vista.dificultad());
+		juego = new Sudoku (vista.getDificultad());
 		vista.setTablero(juego.getTablero());
 	}
 	
 	public void restart(){
 		vista.setTablero(Parser.importar(juego.getSemilla()));
 		juego.restartTimeInic();
+	}
+	
+	public void resolver(){
+		vista.setTablero(Parser.importar(juego.getResuelto()));
 	}
 }

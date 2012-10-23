@@ -149,6 +149,10 @@ public class Sudoku{
 	public String getSemilla(){
 		return semilla;
 	}
+	
+	public String getResuelto(){
+		return resuelto;
+	}
 ////////////////////////////////////////////////////////////////////////	
 	public void restartTimeInic (){
 		tiempoInicial.obtenerHoraSys();
