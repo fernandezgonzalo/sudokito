@@ -42,7 +42,7 @@ public class ViewIntrucciones extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Corbel", 1, 24));
         jLabel1.setText("Intrucciones :");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/tablero.jpg")));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sudokito/View/Images/tablero.jpg")));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
