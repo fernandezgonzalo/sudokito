@@ -8,7 +8,7 @@ public class Parser {
 		int cont = 0;
 		for (int i=0; i<9; i++){
 			for (int j=0; j<9; j++){
-				if (str.charAt(cont) != 0)
+				if (str.charAt(cont) != '0')
 					m[i][j] = String.valueOf(str.charAt(cont));
 				else
 					m[i][j] = "";

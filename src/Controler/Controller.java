@@ -9,9 +9,13 @@ public class Controller {
 	private View1 vista;
 	private Sudoku juego;
 	
+	public Controller(){
+		vista=new View1();
+		vista.setVisible(true);
+	}
+	
 	public void iniciarTablero(){
 		juego = new Sudoku (vista.getDificultad());
-		
 		vista.setTablero(juego.getTablero());
 	}
 	
