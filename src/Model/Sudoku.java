@@ -142,6 +142,9 @@ public class Sudoku{
 		return result;
 	}
 ////////////////////////////////////////////////////////////////////////
+	public String[][] getTablero(){
+		return tablero;
+	}
 }
 /*
  * 
