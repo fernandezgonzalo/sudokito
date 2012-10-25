@@ -23,7 +23,7 @@ public class dbAPI {
 		}
 	}
 
-	public static void newSave(String sudokuActual, int time, String semilla, int dif, String resuelto) {
+	public static void newSave(String sudokuActual, String time, String semilla, String dif, String resuelto) {
 		String query = "";
 		Statement stat = null;
 		try {
@@ -36,6 +36,10 @@ public class dbAPI {
 		}
 	}
 
+	/* Devuelve un ResultSet. resultSet.getString(A) 
+	 * A = { "sudokuActual", "time", "semilla", "dif", "resuelto" }
+	 */
+	
 	public static ResultSet getSave() {
 		String query = "";
 		Statement stat = null;
@@ -61,6 +65,10 @@ public class dbAPI {
 		return rs;
 	}
 
+	/* Retorna un ResultSet. resultSet.getString("name"). resultSet.getInt("points")
+	 * 
+	 * 
+	 */
 	public static ResultSet getRank() {
 		// SELECT name, points from Rank ORDER BY points LIMIT 10;
 		String query = "";

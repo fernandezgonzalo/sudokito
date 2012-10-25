@@ -6,7 +6,7 @@ import View.Interface1.*;
 
 public class Controller {
 
-	private View1 vista;
+	private View1 vista; 
 	private Sudoku juego;
 	
 	public Controller(){
