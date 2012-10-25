@@ -1,5 +1,8 @@
 package Controler;
 
+import java.sql.ResultSet;
+
+import db.dbAPI;
 import Model.Sudoku;
 import Model.Parser;
 import View.Interface1.*;
@@ -12,7 +15,10 @@ public class Controller {
 	public Controller(){
 		vista=new View1();
 		vista.setVisible(true);
+		//vista.addActionListener(this);
 	}
+	
+	
 	
 	public void iniciarTablero(){
 		juego = new Sudoku (vista.getDificultad());
@@ -27,4 +33,13 @@ public class Controller {
 	public void resolver(){
 		vista.setTablero(Parser.importar(juego.getResuelto()));
 	}
+	
+	
+	
+	public void topten (){
+		ResultSet rs = null;
+		rs = dbAPI.getRank();
+		
+	}
+	
 }
