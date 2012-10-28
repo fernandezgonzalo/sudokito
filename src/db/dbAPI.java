@@ -37,7 +37,8 @@ public class dbAPI {
 	}
 
 	/* Devuelve un ResultSet. resultSet.getString(A) 
-	 * A = { "sudokuActual", "time", "semilla", "dif", "resuelto" }
+	 * A = { "sudokuActual", "semilla", "dif", "resuelto" }
+	 * resultSet.getInt("time")
 	 */
 	
 	public static ResultSet getSave() {

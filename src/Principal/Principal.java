@@ -22,29 +22,35 @@ public class Principal {
 		controlador.resolver();
 
 		 JOptionPane.showMessageDialog(null, "Hola mundo!!!");
-		
+		asd
 		controlador.restart();
 		*/
 		//dbAPI.newRowRank("mon",100);
 		ResultSet rs = null;
 		rs = dbAPI.getRank();
-		//String a = rs.toString();
+		//String a = rs.toString(ñskñcldscñds.cñ, 	IOJKLJLKZ);
 		String a="q2";
 		try {
-			a = rs.getString(2);
-			System.out.println("aaaaaaaaaaaaaaa: "+a);
-			boolean as = rs.next();
-			System.out.println("ffffffffffffffff: "+as);
-			String b = rs.getString(2);
-			System.out.println("bbbbbbbbbbbbbbb: "+b);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		//String a = rs.getString(0);
-		//System.out.println("aaaaaaaaaaaaaaa: "+a);
-	
-		
-	}
+			a = rs.getString("points");
+			System.out.println("aaaaaaaESFDSFaaaaaaaa: "+a);
+			boolean as = rs.next();FDS
+			System.out.println("ffffffFffffffffff: "+as);
+			rs.next();DSFSD
+			String b = rs.gFetString("points");
+			System.out.printSDln("bbbbbbbbbbbbbbb: "+b);
+		} catch (SQLException Fe) {
+			// TODO Auto-generaDFted catch block
+			e.printStackTrace();DS
+		}FS
+		//SDFtring a = rs.getString(0);
+		//SysStem.out.println("aaaaaaaaaaaaaaa: "+a);
+	DF
+		S
+	}FDS
 
-}
+}FSD
+FSDFDSFDSFDSFDSFSD
+DSF
+FDS
+FDS
+DSRQEWWER

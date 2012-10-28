@@ -1,3 +1,12 @@
+/* 
+ * Por el tema del resultSet que no podes sacar la cantidad de filas con el metodo tamanioFilas,
+ * se me ocurre de hacer la cagada de llamar 2 veces al getRank, un rs lo usas para calcular
+ * la cantidad de filas y el otro para llenar en la tabla, es una cagada porque estas llamando 2
+ * veces al select. La otra es, dado que ya sabemos el tamaÃ±o maximo de filas del rs que es 10,
+ * usarlo como constante y listo, si los datos son menores a 10, el resto se rellena con null o "" 
+ */
+
+
 package ManejoTablas;
 /**
  * En esta clase se definen e implementan todos los metos necesarios para la creacion 
@@ -19,7 +28,7 @@ public class Tablas {
 	 * @param rs "Consulta"
 	 * @return numRows "Cantidad de filas"
 	 */
-	private static int tamañoFilas (ResultSet rs){
+	private static int tamanioFilas (ResultSet rs){
 		int numRows = 0;
 		try {
 			rs.last();
@@ -34,17 +43,17 @@ public class Tablas {
 	/**
 	 * Crea uan matriz con las dimensiones pasadas por parametro y los datos 
 	 * del objeto ResulSet
-	 * @param tamañoFilas
-	 * @param tamañoColumnas
+	 * @param tamaï¿½oFilas
+	 * @param tamaï¿½oColumnas
 	 * @param rs
 	 * @return matriz
 	 */
-	private static Object[][] crearMatriz (int tamañoFilas, int tamañoColumnas, ResultSet rs){
-		Object[][] matriz = new Object[tamañoFilas][tamañoColumnas];
+	private static Object[][] crearMatriz (int tamaï¿½oFilas, int tamaï¿½oColumnas, ResultSet rs){
+		Object[][] matriz = new Object[tamaï¿½oFilas][tamaï¿½oColumnas];
 		try {
-		for (int f=0;f<tamañoFilas;f++){
+		for (int f=0;f<tamaï¿½oFilas;f++){
 			int indice =1; 
-			for (int c=0;c<tamañoColumnas;c++){
+			for (int c=0;c<tamaï¿½oColumnas;c++){
 				matriz[f][c]=rs.getString(indice);
 				indice++;
 			}
@@ -66,7 +75,7 @@ public class Tablas {
 	 * @return tabla "objeto JTable ya instanciado"
 	 */
 	public static JTable crearTabla (ResultSet rs, String columNames[]){
-		Object [][] matriz = crearMatriz (tamañoFilas(rs),columNames.length,rs);
+		Object [][] matriz = crearMatriz (tamaï¿½oFilas(rs),columNames.length,rs);
 		tabla= new JTable(matriz,columNames);
 		return tabla;
 	}
