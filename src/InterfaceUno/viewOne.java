@@ -2,6 +2,8 @@ package InterfaceUno;
 
 import java.awt.Font;
 import java.awt.TextField;
+
+import javax.swing.JMenuItem;
 import javax.swing.JTable;
 import java.util.LinkedList;
 import javax.swing.JTextField;
@@ -16,13 +18,13 @@ public final class viewOne extends javax.swing.JFrame {
     
     viewDificultad VD =new viewDificultad();
     viewTopTen VTT = new viewTopTen();
-    Controller controler;
+    Controller controller;
     /** Creates new form viewOne */
     public viewOne() {
         initComponents();
         setTexFieldInList();
-        setTablero();
-        controler= new Controller();
+        //setTablero();
+        controller= new Controller();
         this.setVisible(true);
         
     }
@@ -221,7 +223,7 @@ public final class viewOne extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+//        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sudokus");
         setResizable(false);
 
@@ -248,11 +250,11 @@ public final class viewOne extends javax.swing.JFrame {
         celda24.setBackground(new java.awt.Color(102, 255, 102));
 
         celda23.setBackground(new java.awt.Color(102, 255, 102));
-        celda23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                celda23ActionPerformed(evt);
-            }
-        });
+//        celda23.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                celda23ActionPerformed(evt);
+//            }
+//        });
 
         celda22.setBackground(new java.awt.Color(102, 255, 102));
 
@@ -287,31 +289,31 @@ public final class viewOne extends javax.swing.JFrame {
         celda37.setBackground(new java.awt.Color(102, 255, 102));
 
         celda60.setBackground(new java.awt.Color(102, 255, 102));
-        celda60.setEditable(false);
+     //   celda60.setEditable(false);
 
         celda59.setBackground(new java.awt.Color(102, 255, 102));
-        celda59.setEditable(false);
+      //  celda59.setEditable(false);
 
         celda58.setBackground(new java.awt.Color(102, 255, 102));
-        celda58.setEditable(false);
+     //   celda58.setEditable(false);
 
         celda69.setBackground(new java.awt.Color(102, 255, 102));
-        celda69.setEditable(false);
+   //     celda69.setEditable(false);
 
         celda68.setBackground(new java.awt.Color(102, 255, 102));
-        celda68.setEditable(false);
+   //     celda68.setEditable(false);
 
         celda67.setBackground(new java.awt.Color(102, 255, 102));
-        celda67.setEditable(false);
+ //       celda67.setEditable(false);
 
         celda76.setBackground(new java.awt.Color(102, 255, 102));
-        celda76.setEditable(false);
+ //       celda76.setEditable(false);
 
         celda77.setBackground(new java.awt.Color(102, 255, 102));
-        celda77.setEditable(false);
+//        celda77.setEditable(false);
 
         celda78.setBackground(new java.awt.Color(102, 255, 102));
-        celda78.setEditable(false);
+//        celda78.setEditable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -672,8 +674,10 @@ public final class viewOne extends javax.swing.JFrame {
 
         NP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_J, java.awt.event.InputEvent.CTRL_MASK));
         NP.setText("Nueva Partida");
+
         NP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+       
+        	public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NPActionPerformed(evt);
             }
         });
@@ -769,7 +773,8 @@ public final class viewOne extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 private void NPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NPActionPerformed
-// TODO add your handling code here:
+	setTablero(controller.nuevoJuego(getDificultad()));
+	
 }//GEN-LAST:event_NPActionPerformed
 
 private void SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SActionPerformed
@@ -802,98 +807,7 @@ private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_informacionActionPerformed
     VTT.setVisible(true);
 }//GEN-LAST:event_informacionActionPerformed
-	public void setTablero(){
-           int [][] a = new int[9][9];
-           a[0][0]=4;
-           a[0][1]=6;
-           a[0][2]=3;
-           a[0][3]=7;
-           a[0][4]=0;
-           a[0][5]=9;
-           a[0][6]=1;
-           a[0][7]=3;
-           a[0][8]=7;
-           
-           a[1][0]=0;
-           a[1][1]=1;
-           a[1][2]=6;
-           a[1][3]=3;
-           a[1][4]=9;
-           a[1][5]=2;
-           a[1][6]=0;
-           a[1][7]=9;
-           a[1][8]=1;
-           
-           a[2][0]=7;
-           a[2][1]=4;
-           a[2][2]=2;
-           a[2][3]=9;
-           a[2][4]=0;
-           a[2][5]=7;
-           a[2][6]=2;
-           a[2][7]=0;
-           a[2][8]=1;
-           
-           a[3][0]=5;
-           a[3][1]=2;
-           a[3][2]=1;
-           a[3][3]=0;
-           a[3][4]=8;
-           a[3][5]=4;
-           a[3][6]=9;
-           a[3][7]=0;
-           a[3][8]=3;
-           
-           a[4][0]=2;
-           a[4][1]=5;
-           a[4][2]=9;
-           a[4][3]=5;
-           a[4][4]=0;
-           a[4][5]=4;
-           a[4][6]=2;
-           a[4][7]=0;
-           a[4][8]=4;
-           
-           a[5][0]=2;
-           a[5][1]=4;
-           a[5][2]=7;
-           a[5][3]=9;
-           a[5][4]=6;
-           a[5][5]=5;
-           a[5][6]=4;
-           a[5][7]=0;
-           a[5][8]=6;
-           
-           a[6][0]=3;
-           a[6][1]=7;
-           a[6][2]=4;
-           a[6][3]=0;
-           a[6][4]=8;
-           a[6][5]=3;
-           a[6][6]=2;
-           a[6][7]=1;
-           a[6][8]=9;
-           
-           a[7][0]=1;
-           a[7][1]=4;
-           a[7][2]=7;
-           a[7][3]=4;
-           a[7][4]=9;
-           a[7][5]=4;
-           a[7][6]=0;
-           a[7][7]=9;
-           a[7][8]=2;
-            
-           a[8][0]=5;
-           a[8][1]=6;
-           a[8][2]=8;
-           a[8][3]=0;
-           a[8][4]=4;
-           a[8][5]=2;
-           a[8][6]=0;
-           a[8][7]=7;
-           a[8][8]=8;
-           
+	public void setTablero(String[][] matriz){
            //Semilla
             Font font1 = new Font("Verdana", Font.BOLD, 30);
             //noSemilla
@@ -903,11 +817,10 @@ private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
             TextField asd;
             for(int i=0;i<9;i++){
                 for(int j=0;j<9;j++){
-                    if ((a[i][j])!=0){
+                    if ((matriz[i][j])!=""){
                         asd = ListtextField.get(cont);
                         asd.setFont(font1);
-                        Integer b =(Integer)(a[i][j]);
-                        asd.setText(" "+b.toString());
+                        asd.setText(" "+matriz[i][j]);
                         asd.setEditable(false);
                         ListtextField.set(cont,asd);
                     }else{

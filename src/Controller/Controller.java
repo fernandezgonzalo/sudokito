@@ -29,7 +29,7 @@ public class Controller {
 */	
 	
 	
-	public String[][] iniciarTablero(String dificultad){
+	public String[][] nuevoJuego(String dificultad){
 		juego = new Sudoku (dificultad);
 		//vista.setTablero(juego.getTablero());
 		return juego.getTablero();
