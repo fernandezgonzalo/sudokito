@@ -1,23 +1,13 @@
 package Principal;
 
-
-import java.lang.reflect.Array;
-import java.sql.ResultSet;
-
-  import org.sqlite.*;
-
-import javax.swing.JOptionPane;
-
-import db.dbAPI;
-
-import Controler.Controller;
-import ManejoTablas.Tablas;
+import db.dbConn;
+import InterfaceUno.viewOne;
 
 public class Principal {
-
+	
 	public static void main(String[] args) {
+		db.dbConn.getInstance();
+		viewOne vista1 = new viewOne();
 		
-		ResultSet rs = null;
-		rs = dbAPI.getRank();
 	}
 }

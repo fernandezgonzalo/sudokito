@@ -1,4 +1,4 @@
-package View.InterfaceUno;
+package InterfaceUno;
 
 import java.awt.Font;
 import java.awt.TextField;
@@ -6,12 +6,7 @@ import javax.swing.JTable;
 import java.util.LinkedList;
 import javax.swing.JTextField;
 import View.*;
-        
-/*
- * viewOne.java
- *
- * Created on Oct 18, 2012, 11:45:01 PM
- */
+import Controller.Controller;
 /**
  *
  * @author Administrator
@@ -21,12 +16,15 @@ public final class viewOne extends javax.swing.JFrame {
     
     viewDificultad VD =new viewDificultad();
     viewTopTen VTT = new viewTopTen();
-
+    Controller controler;
     /** Creates new form viewOne */
     public viewOne() {
         initComponents();
         setTexFieldInList();
         setTablero();
+        controler= new Controller();
+        this.setVisible(true);
+        
     }
     public String getDificultad(){
         return VD.getDificultad();

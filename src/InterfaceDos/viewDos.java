@@ -1,4 +1,4 @@
-package View.InterfaceDos;
+package InterfaceDos;
 
 import View.*;
 import java.awt.Font;

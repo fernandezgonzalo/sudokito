@@ -1,4 +1,7 @@
-package Controler;
+package Controller;
+import Model.Sudoku;
+import Model.Parser;
+
 /*
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -6,52 +9,56 @@ import java.sql.ResultSetMetaData;
 import db.dbAPI;
 import ManejoTablas.Tablas;
 import Model.Sudoku;
-import Model.Parser;
+
 import View.InterfaceUno.*;
 
 import javax.swing.JTable;*/
-import View.InterfaceUno.viewOne;
+
 
 public class Controller {
 
-	private viewOne vista; 
+	//private viewOne vista; 
 	private Sudoku juego;
 	
-	public Controller(){
-		vista=new View1();
-		vista.setVisible(true);
+/*	public Controller(){
+		//vista=new View1();
+		//vista.setVisible(true);
 		//vista.addActionListener(this);
+		juego = new Sudoku
+	}
+*/	
+	
+	
+	public String[][] iniciarTablero(String dificultad){
+		juego = new Sudoku (dificultad);
+		//vista.setTablero(juego.getTablero());
+		return juego.getTablero();
 	}
 	
-	
-	
-	public void iniciarTablero(){
-		juego = new Sudoku (vista.getDificultad());
-		vista.setTablero(juego.getTablero());
-	}
-	
-	public void restart(){
-		vista.setTablero(Parser.importar(juego.getSemilla()));
+	public String[][] restart(){
+		//vista.setTablero(Parser.importar(juego.getSemilla()));
 		juego.restartTimeInic();
+		return (Parser.importar(juego.getSemilla()));
 	}
 	
-	public void resolver(){
-		vista.setTablero(Parser.importar(juego.getResuelto()));
+	public String[][] resolver(){
+		//vista.setTablero(Parser.importar(juego.getResuelto()));
+		return (Parser.importar(juego.getResuelto()));
 	}
 	
 	
 	
 	public void topTen (){
-		ResultSet rs = null;
-		rs = dbAPI.getRank(); 
-		ResulsetToArray(){
+		//ResultSet rs = null;
+		//rs = dbAPI.getRank(); 
+		//ResulsetToArray(){
 			
 		}
 		//String[] columNames = {"name","points"};	
 		//JTable table = Tablas.crearTabla(rs,columNames);
 		//vista.setTable(table);
-	}
-	 private Object[][] ResultSetToArray(ResultSet rs) {
+	
+	 /*private Object[][] ResultSetToArray(ResultSet rs) {
 		 Object obj[][]=null;
 		 try{
 			 rs.last();
@@ -70,6 +77,6 @@ public class Controller {
 		 }catch(Exception e){}
 		 return obj;
 		}
-
+*/
 	
 }
