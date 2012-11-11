@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import db.dbAPI;
 import Model.Sudoku;
 import Model.Parser;
-import View.Interface1.*;
+import View.InterfaceUno.*;
 
 public class Controller {
 

@@ -34,7 +34,7 @@ public class Principal {
 			a = rs.getString("points");
 			System.out.println("aaaaaaaESFDSFaaaaaaaa: "+a);
 			boolean as = rs.next();FDS
-			System.out.println("ffffffFffffffffff: "+as);
+		//	System.out.println("ffffffFffffffffff: "+as);
 			rs.next();DSFSD
 			String b = rs.gFetString("points");
 			System.out.printSDln("bbbbbbbbbbbbbbb: "+b);
