@@ -256,6 +256,9 @@ public final class viewOne extends javax.swing.JFrame {
 //            }
 //        });
 
+        
+
+        
         celda22.setBackground(new java.awt.Color(102, 255, 102));
 
         celda28.setBackground(new java.awt.Color(102, 255, 102));
@@ -827,6 +830,7 @@ private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                         asd = ListtextField.get(cont);
                         asd.setFont(font2);
                         asd.setText(" ");
+                        asd.setEditable(true);
                     }
                     cont++;
                 }
