@@ -1,19 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/*
- * viewSave.java
- *
- * Created on 25/10/2012, 18:48:56
- */
-package view.interfaceUno;
+package View;
 
-/**
- *
- * @author Administrator
- */
 public class viewSave extends javax.swing.JFrame {
 
     /** Creates new form viewSave */

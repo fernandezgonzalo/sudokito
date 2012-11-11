@@ -1,19 +1,5 @@
-package view.interfaceUno;
+package View;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * viewInfoSudoku.java
- *
- * Created on Oct 19, 2012, 1:00:08 AM
- */
-/**
- *
- * @author Administrator
- */
 public class viewInfoSudoku extends javax.swing.JFrame {
 
     /** Creates new form viewInfoSudoku */

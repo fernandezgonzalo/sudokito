@@ -1,10 +1,11 @@
-package view.interfaceUno;
+package View.InterfaceUno;
 
 import java.awt.Font;
 import java.awt.TextField;
 import javax.swing.JTable;
 import java.util.LinkedList;
 import javax.swing.JTextField;
+import View.*;
         
 /*
  * viewOne.java

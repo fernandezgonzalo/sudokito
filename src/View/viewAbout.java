@@ -1,14 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/*
- * viewAbout.java
- *
- * Created on 25/10/2012, 17:56:34
- */
-package View.InterfaceUno;
+package View;
 
 /**
  *

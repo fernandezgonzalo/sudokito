@@ -1,21 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/*
- * viewTopTen.java
- *
- * Created on 25/10/2012, 19:03:54
- */
-package view.interfaceUno;
+package View;
 
 import javax.swing.JTable;
 
-/**
- *
- * @author Administrator
- */
+
 public class viewTopTen extends javax.swing.JFrame {
 
     /** Creates new form viewTopTen */

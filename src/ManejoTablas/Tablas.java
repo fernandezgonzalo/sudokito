@@ -100,7 +100,7 @@ public class Tablas {
 			
 			
 //=======
-		Object [][] matriz = crearMatriz (tamanioFilas(rs),columNames.length,rs);
+		//Object [][] matriz = crearMatriz (tamanioFilas(rs),columNames.length,rs);
 //>>>>>>> .r34
 		tabla= new JTable(matriz,columNames);
 		return tabla;

@@ -1,14 +1,5 @@
-        /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * viewIntrucciones.java
- *
- * Created on Oct 20, 2012, 5:55:52 PM 
- */
-package view.interfaceUno;
+ 
+package View;
 
 /**
  *

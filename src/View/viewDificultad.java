@@ -1,19 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/*
- * viewDificultad.java
- *
- * Created on Oct 20, 2012, 5:07:35 PM
- */
-package view.interfaceUno;
+package View;
 
-/**
- *
- * @author Administrator
- */
 public class viewDificultad extends javax.swing.JFrame {
 
     

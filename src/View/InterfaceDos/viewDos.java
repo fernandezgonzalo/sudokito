@@ -1,17 +1,13 @@
-package view.interfaceDos;
+package View.InterfaceDos;
 
-import view.interfaceUno.*;
+import View.*;
 import java.awt.Font;
 import java.awt.TextField;
 import javax.swing.JTable;
 import java.util.LinkedList;
 import javax.swing.JTextField;
         
-/*
- * viewDos.java
- *
- * Created on Oct 18, 2012, 11:45:01 PM
- */
+
 /**
  *
  * @author Administrator

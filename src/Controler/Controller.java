@@ -1,5 +1,5 @@
 package Controler;
-
+/*
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 
@@ -9,11 +9,12 @@ import Model.Sudoku;
 import Model.Parser;
 import View.InterfaceUno.*;
 
-import javax.swing.JTable;
+import javax.swing.JTable;*/
+import View.InterfaceUno.viewOne;
 
 public class Controller {
 
-	private View1 vista; 
+	private viewOne vista; 
 	private Sudoku juego;
 	
 	public Controller(){
