@@ -153,15 +153,15 @@ public class Sudoku{
 	public String getResuelto(){
 		return resuelto;
 	}
+	
+	public void setTime (){
+		tiemoTranscurrido = new Timer();
+	}
 ////////////////////////////////////////////////////////////////////////	
 	public void restartTimeInic (){
 		tiempoInicial.obtenerHoraSys();
 	}
-	
-	public void restartTime (){
-		tiemoTranscurrido = new Timer();
-	}
-	
+		
 	public String calcularTiempo (){
 		Timer aux = new Timer();
 		aux.obtenerHoraSys();

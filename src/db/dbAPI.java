@@ -27,7 +27,7 @@ public class dbAPI {
 		String query = "";
 		Statement stat = null;
 		try {
-			query = "INSERT INTO Save(sudokuActual, time, semilla, dif, resuelto) VALUES('" + sudokuActual + "', " + time + ", '" + semilla + "', " + dif + ", '" + resuelto + "');";
+			query = "INSERT INTO Save(sudokuActual, time, semilla, dif, resuelto) VALUES('" + sudokuActual + "', '" + time + "', '" + semilla + "', '" + dif + "', '" + resuelto + "');";
 			stat = dbConn.getInstance().createStatement();
 			stat.executeUpdate(query);
 		} catch (Exception ex) {

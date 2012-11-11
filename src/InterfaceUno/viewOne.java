@@ -688,7 +688,13 @@ public final class viewOne extends javax.swing.JFrame {
 
         GP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         GP.setText("Guardar Partida");
+        GP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GPActionPerformed(evt);
+            }
+        });
         archivo.add(GP);
+        
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setText("Nivel de Dificultad");
@@ -710,7 +716,7 @@ public final class viewOne extends javax.swing.JFrame {
 
         jMenuBar1.add(archivo);
 
-        informacion.setText("Información");
+        informacion.setText("Informacion");
         informacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 informacionActionPerformed(evt);
@@ -727,7 +733,7 @@ public final class viewOne extends javax.swing.JFrame {
         informacion.add(Int);
 
         IS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        IS.setText("Información del Sudoku");
+        IS.setText("Informacion del Sudoku");
         IS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ISActionPerformed(evt);
@@ -775,6 +781,10 @@ public final class viewOne extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+private void GPActionPerformed(java.awt.event.ActionEvent evt) {
+	controller.guardarPartida(getTablero(), getDificultad());
+}
 private void NPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NPActionPerformed
 	setTablero(controller.nuevoJuego(getDificultad()));
 	
@@ -810,6 +820,19 @@ private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_informacionActionPerformed
     VTT.setVisible(true);
 }//GEN-LAST:event_informacionActionPerformed
+
+	public String[][] getTablero(){
+		String[][] m = new String[9][9];
+		int cont = 0;  
+		for (int f=0; f<9; f++){
+			for (int c=0; c<9; c++){
+				m[f][c] = ListtextField.get(cont).getText();
+				cont++;
+			}
+		}
+		return m;
+	}
+	
 	public void setTablero(String[][] matriz){
            //Semilla
             Font font1 = new Font("Verdana", Font.BOLD, 30);
@@ -841,12 +864,12 @@ private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
      /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    /*public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+         *
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -865,14 +888,14 @@ private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        // Create and display the form *
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
                 new viewOne().setVisible(true);
             }
         });
-    }
+    }*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem GP;
     private javax.swing.JMenuItem IS;

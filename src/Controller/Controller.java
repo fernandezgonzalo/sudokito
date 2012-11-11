@@ -1,4 +1,5 @@
 package Controller;
+import db.dbAPI;
 import Model.Sudoku;
 import Model.Parser;
 
@@ -44,6 +45,12 @@ public class Controller {
 	public String[][] resolver(){
 		//vista.setTablero(Parser.importar(juego.getResuelto()));
 		return (Parser.importar(juego.getResuelto()));
+	}
+	
+	
+	public void guardarPartida (String[][] tablero, String dificultad){
+		String sudokuActual = Parser.exportar(tablero);
+		dbAPI.newSave(sudokuActual, juego.calcularTiempo(), juego.getSemilla(), dificultad, juego.getResuelto());
 	}
 	
 	
