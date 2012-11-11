@@ -26,7 +26,8 @@ public class viewDificultad extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+    	setAlwaysOnTop(true);
+    	setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         aceptar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();

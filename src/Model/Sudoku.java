@@ -173,6 +173,11 @@ public class Sudoku{
 			return tiempo;
 	}
 
+////////////////////////////////////////////////////////////////////////
+	public void setTablero(String[][] tab){
+		tablero = tab;
+	}
+////////////////////////////////////////////////////////////////////////
 	public String [][] sugerencia (){
 		int aux=0;
 		boolean a =true;
@@ -197,21 +202,5 @@ public class Sudoku{
 
 }
 
-/*
- * 
- * public int[] ayuda (int x, int y){
-	 * (x1,y1)=priElem(x,y);
-	 * int[] result;
-	 * int[] aux;
-	 * for (int a;{1,2,3,4,5,6,7,8,9}){
-		 * aux = {1,0,0,0,0};
-		 * aux=cuadrado[x1][y1];
-		 * if (aux[0]==1) result=fila (x1);
-		 * if (aux[0]==1) result=columna (y1);
-		 * if (aux[0]==1) result.add(a);
-	 }
-	 * return result
-   }
- * 
- */
+
 

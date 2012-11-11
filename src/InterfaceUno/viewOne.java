@@ -2,11 +2,23 @@ package InterfaceUno;
 
 import java.awt.Font;
 import java.awt.TextField;
+
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import java.util.LinkedList;
 import javax.swing.JTextField;
-import View.*;
+
+import View.viewAbout;
+import View.viewDificultad;
+import View.viewInfoSudoku;
+import View.viewIntrucciones;
+import View.viewTopTen;
 import Controller.Controller;
+/*
+ * viewOne.java
+ *
+ * Created on Oct 18, 2012, 11:45:01 PM
+ */
 /**
  *
  * @author Administrator
@@ -16,13 +28,12 @@ public final class viewOne extends javax.swing.JFrame {
     
     viewDificultad VD =new viewDificultad();
     viewTopTen VTT = new viewTopTen();
-    Controller controler;
+    Controller controller;
     /** Creates new form viewOne */
     public viewOne() {
         initComponents();
         setTexFieldInList();
-        setTablero();
-        controler= new Controller();
+        controller= new Controller();
         this.setVisible(true);
         
     }
@@ -125,7 +136,7 @@ public final class viewOne extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+    	setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jPanel1 = new javax.swing.JPanel();
         celda10 = new java.awt.TextField();
         celda1 = new java.awt.TextField();
@@ -208,109 +219,111 @@ public final class viewOne extends javax.swing.JFrame {
         celda79 = new java.awt.TextField();
         celda80 = new java.awt.TextField();
         celda81 = new java.awt.TextField();
+        termine = new javax.swing.JButton();
+        cambiarInterfaz = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         archivo = new javax.swing.JMenu();
         NP = new javax.swing.JMenuItem();
+        cargarPartida = new javax.swing.JMenuItem();
         GP = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        TT = new javax.swing.JMenuItem();
         S = new javax.swing.JMenuItem();
         informacion = new javax.swing.JMenu();
         Int = new javax.swing.JMenuItem();
         IS = new javax.swing.JMenuItem();
         SO = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        bTopTen = new javax.swing.JMenuItem();
+        ayuda = new javax.swing.JMenu();
+        verificar = new javax.swing.JMenuItem();
+        Sugerir = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sudokus");
+        setAlwaysOnTop(true);
         setResizable(false);
 
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        celda4.setBackground(new java.awt.Color(102, 255, 102));
+        celda4.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda13.setBackground(new java.awt.Color(102, 255, 102));
+        celda13.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda14.setBackground(new java.awt.Color(102, 255, 102));
+        celda14.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda5.setBackground(new java.awt.Color(102, 255, 102));
+        celda5.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda6.setBackground(new java.awt.Color(102, 255, 102));
+        celda6.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda15.setBackground(new java.awt.Color(102, 255, 102));
+        celda15.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda36.setBackground(new java.awt.Color(102, 255, 102));
+        celda36.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda35.setBackground(new java.awt.Color(102, 255, 102));
+        celda35.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda34.setBackground(new java.awt.Color(102, 255, 102));
+        celda34.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda24.setBackground(new java.awt.Color(102, 255, 102));
+        celda24.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda23.setBackground(new java.awt.Color(102, 255, 102));
-        celda23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                celda23ActionPerformed(evt);
-            }
-        });
+        celda23.setBackground(new java.awt.Color(244, 117, 117));
+        
+        celda22.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda22.setBackground(new java.awt.Color(102, 255, 102));
+        celda28.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda28.setBackground(new java.awt.Color(102, 255, 102));
+        celda29.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda29.setBackground(new java.awt.Color(102, 255, 102));
+        celda30.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda30.setBackground(new java.awt.Color(102, 255, 102));
+        celda54.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda54.setBackground(new java.awt.Color(102, 255, 102));
+        celda45.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda45.setBackground(new java.awt.Color(102, 255, 102));
+        celda44.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda44.setBackground(new java.awt.Color(102, 255, 102));
+        celda53.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda53.setBackground(new java.awt.Color(102, 255, 102));
+        celda43.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda43.setBackground(new java.awt.Color(102, 255, 102));
+        celda52.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda52.setBackground(new java.awt.Color(102, 255, 102));
+        celda39.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda39.setBackground(new java.awt.Color(102, 255, 102));
+        celda48.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda48.setBackground(new java.awt.Color(102, 255, 102));
+        celda38.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda38.setBackground(new java.awt.Color(102, 255, 102));
+        celda47.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda47.setBackground(new java.awt.Color(102, 255, 102));
+        celda46.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda46.setBackground(new java.awt.Color(102, 255, 102));
+        celda37.setBackground(new java.awt.Color(244, 117, 117));
 
-        celda37.setBackground(new java.awt.Color(102, 255, 102));
-
-        celda60.setBackground(new java.awt.Color(102, 255, 102));
+        celda60.setBackground(new java.awt.Color(244, 117, 117));
         celda60.setEditable(false);
 
-        celda59.setBackground(new java.awt.Color(102, 255, 102));
+        celda59.setBackground(new java.awt.Color(244, 117, 117));
         celda59.setEditable(false);
 
-        celda58.setBackground(new java.awt.Color(102, 255, 102));
+        celda58.setBackground(new java.awt.Color(244, 117, 117));
         celda58.setEditable(false);
 
-        celda69.setBackground(new java.awt.Color(102, 255, 102));
+        celda69.setBackground(new java.awt.Color(244, 117, 117));
         celda69.setEditable(false);
 
-        celda68.setBackground(new java.awt.Color(102, 255, 102));
+        celda68.setBackground(new java.awt.Color(244, 117, 117));
         celda68.setEditable(false);
 
-        celda67.setBackground(new java.awt.Color(102, 255, 102));
+        celda67.setBackground(new java.awt.Color(244, 117, 117));
         celda67.setEditable(false);
 
-        celda76.setBackground(new java.awt.Color(102, 255, 102));
+        celda76.setBackground(new java.awt.Color(244, 117, 117));
         celda76.setEditable(false);
 
-        celda77.setBackground(new java.awt.Color(102, 255, 102));
+        celda77.setBackground(new java.awt.Color(244, 117, 117));
         celda77.setEditable(false);
 
-        celda78.setBackground(new java.awt.Color(102, 255, 102));
+        celda78.setBackground(new java.awt.Color(244, 117, 117));
         celda78.setEditable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -668,6 +681,22 @@ public final class viewOne extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
+        termine.setText("¿¿Termine??");
+        termine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                termineActionPerformed(evt);
+            }
+        });
+
+        cambiarInterfaz.setText("Cambiar Interfaz");
+        cambiarInterfaz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cambiarInterfazActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("(Opción para comprobar si ha finalizado el juego)");
+
         archivo.setText("Archivo");
 
         NP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_J, java.awt.event.InputEvent.CTRL_MASK));
@@ -679,8 +708,17 @@ public final class viewOne extends javax.swing.JFrame {
         });
         archivo.add(NP);
 
+        cargarPartida.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        cargarPartida.setText("Cargar Partida");
+        archivo.add(cargarPartida);
+
         GP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         GP.setText("Guardar Partida");
+        GP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GPActionPerformed(evt);
+            }
+        });
         archivo.add(GP);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
@@ -691,6 +729,14 @@ public final class viewOne extends javax.swing.JFrame {
             }
         });
         archivo.add(jMenuItem1);
+
+        TT.setText("Top Ten");
+        TT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TTActionPerformed(evt);
+            }
+        });
+        archivo.add(TT);
 
         S.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
         S.setText("Salir");
@@ -703,7 +749,7 @@ public final class viewOne extends javax.swing.JFrame {
 
         jMenuBar1.add(archivo);
 
-        informacion.setText("InformaciÃ³n");
+        informacion.setText("Información");
         informacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 informacionActionPerformed(evt);
@@ -720,7 +766,7 @@ public final class viewOne extends javax.swing.JFrame {
         informacion.add(Int);
 
         IS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        IS.setText("InformaciÃ³n del Sudoku");
+        IS.setText("Información del Sudoku");
         IS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ISActionPerformed(evt);
@@ -741,10 +787,34 @@ public final class viewOne extends javax.swing.JFrame {
         });
         informacion.add(jMenuItem2);
 
-        bTopTen.setText("Top Ten");
-        informacion.add(bTopTen);
-
         jMenuBar1.add(informacion);
+
+        ayuda.setText("Ayuda");
+        ayuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ayudaActionPerformed(evt);
+            }
+        });
+
+        verificar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        verificar.setText("Verificar");
+        verificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verificarActionPerformed(evt);
+            }
+        });
+        ayuda.add(verificar);
+
+        Sugerir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        Sugerir.setText("Sugerir");
+        Sugerir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SugerirActionPerformed(evt);
+            }
+        });
+        ayuda.add(Sugerir);
+
+        jMenuBar1.add(ayuda);
 
         setJMenuBar(jMenuBar1);
 
@@ -753,32 +823,50 @@ public final class viewOne extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(232, 232, 232)
+                        .addComponent(termine))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(223, 223, 223)
+                        .addComponent(cambiarInterfaz)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addContainerGap()
+                .addComponent(cambiarInterfaz, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(termine, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+private void GPActionPerformed(java.awt.event.ActionEvent evt) {
+	controller.guardarPartida(getTablero(), getDificultad());
+	JOptionPane.showMessageDialog(this, "La partida se ha guardado correctamente.", "",JOptionPane.WARNING_MESSAGE);
+}
+
 private void NPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NPActionPerformed
-// TODO add your handling code here:
-}//GEN-LAST:event_NPActionPerformed
+	setTablero(controller.nuevoJuego(getDificultad()));
+}
 
 private void SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SActionPerformed
     dispose();// TODO add your handling code here:
 }//GEN-LAST:event_SActionPerformed
-
-private void celda23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celda23ActionPerformed
-// TODO add your handling code here:
-}//GEN-LAST:event_celda23ActionPerformed
 
 private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
     VD.setVisible(true);
@@ -802,160 +890,70 @@ private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_informacionActionPerformed
     VTT.setVisible(true);
 }//GEN-LAST:event_informacionActionPerformed
-	public void setTablero(){
-           int [][] a = new int[9][9];
-           a[0][0]=4;
-           a[0][1]=6;
-           a[0][2]=3;
-           a[0][3]=7;
-           a[0][4]=0;
-           a[0][5]=9;
-           a[0][6]=1;
-           a[0][7]=3;
-           a[0][8]=7;
-           
-           a[1][0]=0;
-           a[1][1]=1;
-           a[1][2]=6;
-           a[1][3]=3;
-           a[1][4]=9;
-           a[1][5]=2;
-           a[1][6]=0;
-           a[1][7]=9;
-           a[1][8]=1;
-           
-           a[2][0]=7;
-           a[2][1]=4;
-           a[2][2]=2;
-           a[2][3]=9;
-           a[2][4]=0;
-           a[2][5]=7;
-           a[2][6]=2;
-           a[2][7]=0;
-           a[2][8]=1;
-           
-           a[3][0]=5;
-           a[3][1]=2;
-           a[3][2]=1;
-           a[3][3]=0;
-           a[3][4]=8;
-           a[3][5]=4;
-           a[3][6]=9;
-           a[3][7]=0;
-           a[3][8]=3;
-           
-           a[4][0]=2;
-           a[4][1]=5;
-           a[4][2]=9;
-           a[4][3]=5;
-           a[4][4]=0;
-           a[4][5]=4;
-           a[4][6]=2;
-           a[4][7]=0;
-           a[4][8]=4;
-           
-           a[5][0]=2;
-           a[5][1]=4;
-           a[5][2]=7;
-           a[5][3]=9;
-           a[5][4]=6;
-           a[5][5]=5;
-           a[5][6]=4;
-           a[5][7]=0;
-           a[5][8]=6;
-           
-           a[6][0]=3;
-           a[6][1]=7;
-           a[6][2]=4;
-           a[6][3]=0;
-           a[6][4]=8;
-           a[6][5]=3;
-           a[6][6]=2;
-           a[6][7]=1;
-           a[6][8]=9;
-           
-           a[7][0]=1;
-           a[7][1]=4;
-           a[7][2]=7;
-           a[7][3]=4;
-           a[7][4]=9;
-           a[7][5]=4;
-           a[7][6]=0;
-           a[7][7]=9;
-           a[7][8]=2;
-            
-           a[8][0]=5;
-           a[8][1]=6;
-           a[8][2]=8;
-           a[8][3]=0;
-           a[8][4]=4;
-           a[8][5]=2;
-           a[8][6]=0;
-           a[8][7]=7;
-           a[8][8]=8;
-           
-           //Semilla
-            Font font1 = new Font("Verdana", Font.BOLD, 30);
-            //noSemilla
-            Font font2 = new Font("Verdana", Font.PLAIN, 31);
-            
-            int cont = 0;
-            TextField asd;
-            for(int i=0;i<9;i++){
-                for(int j=0;j<9;j++){
-                    if ((a[i][j])!=0){
-                        asd = ListtextField.get(cont);
-                        asd.setFont(font1);
-                        Integer b =(Integer)(a[i][j]);
-                        asd.setText(" "+b.toString());
-                        asd.setEditable(false);
-                        ListtextField.set(cont,asd);
-                    }else{
-                        asd = ListtextField.get(cont);
-                        asd.setFont(font2);
-                        asd.setText(" ");
-                    }
-                    cont++;
-                }
-            }
-        }
-        
-     
-     /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewOne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewOne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewOne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewOne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+private void TTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TTActionPerformed
+// TODO add your handling code here:
+}//GEN-LAST:event_TTActionPerformed
 
-            public void run() {
-                new viewOne().setVisible(true);
+private void ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaActionPerformed
+// TODO add your handling code here:
+}//GEN-LAST:event_ayudaActionPerformed
+
+private void verificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verificarActionPerformed
+// TODO add your handling code here:
+}//GEN-LAST:event_verificarActionPerformed
+
+private void SugerirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SugerirActionPerformed
+	setTablero(controller.sugerirJugada(getTablero()));
+}//GEN-LAST:event_SugerirActionPerformed
+
+private void termineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_termineActionPerformed
+// TODO add your handling code here:
+}//GEN-LAST:event_termineActionPerformed
+
+private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarInterfazActionPerformed
+// TODO add your handling code here:
+}//GEN-LAST:event_cambiarInterfazActionPerformed
+
+	public String[][] getTablero(){
+		String[][] m = new String[9][9];
+		int cont = 0;  
+		for (int f=0; f<9; f++){
+            for (int c=0; c<9; c++){
+               m[f][c] = ListtextField.get(cont).getText();
+               cont++;
             }
-        });
-    }
+		}
+		return m;
+	}
+
+	public void setTablero(String[][] matriz){
+		//Semilla
+		Font font1 = new Font("Verdana", Font.BOLD, 30);
+		//noSemilla
+		Font font2 = new Font("Verdana", Font.PLAIN, 31);
+
+		int cont = 0;
+		TextField asd;
+		for(int i=0;i<9;i++){
+			for(int j=0;j<9;j++){
+				if ((matriz[i][j])!=""){
+					asd = ListtextField.get(cont);
+					asd.setFont(font1);
+					asd.setText(" "+matriz[i][j]);
+					asd.setEditable(false);
+					ListtextField.set(cont,asd);
+				}else{
+					asd = ListtextField.get(cont);
+					asd.setFont(font2);
+					asd.setText(" ");
+					asd.setEditable(true);
+				}
+				cont++;
+			}
+		}
+	}
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem GP;
     private javax.swing.JMenuItem IS;
@@ -963,7 +961,12 @@ private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private javax.swing.JMenuItem NP;
     private javax.swing.JMenuItem S;
     private javax.swing.JMenuItem SO;
+    private javax.swing.JMenuItem Sugerir;
+    private javax.swing.JMenuItem TT;
     private javax.swing.JMenu archivo;
+    private javax.swing.JMenu ayuda;
+    private javax.swing.JButton cambiarInterfaz;
+    private javax.swing.JMenuItem cargarPartida;
     private java.awt.TextField celda1;
     private java.awt.TextField celda10;
     private java.awt.TextField celda11;
@@ -1046,10 +1049,12 @@ private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private java.awt.TextField celda81;
     private java.awt.TextField celda9;
     private javax.swing.JMenu informacion;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem bTopTen;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton termine;
+    private javax.swing.JMenuItem verificar;
     // End of variables declaration//GEN-END:variables
 }

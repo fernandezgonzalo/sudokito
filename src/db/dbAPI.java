@@ -14,7 +14,6 @@ public class dbAPI {
 		Statement stat = null;
 		try {
 			query = "INSERT INTO Rank(name, points) VALUES ('" + nombre + "', " + puntos + ")";
-			//System.out.println(query);
 			stat = dbConn.getInstance().createStatement();
 			stat.executeUpdate(query);
 		} catch (Exception ex) {
@@ -49,8 +48,6 @@ public class dbAPI {
 			query = "SELECT sudokuActual, time, semilla, dif, resuelto FROM Save";
 			stat = dbConn.getInstance().createStatement();
 			rs = stat.executeQuery(query);
-			// SELECT sudoku, time FROM Save;
-			// DELETE from SavSavee;
 		} catch (Exception ex) {
 			System.out.println(":: ERROR getSave-SELECT");
 			ex.printStackTrace();
@@ -71,7 +68,6 @@ public class dbAPI {
 	 * 
 	 */
 	public static ResultSet getRank() {
-		// SELECT name, points from Rank ORDER BY points LIMIT 10;
 		String query = "";
 		ResultSet rs = null;
 		Statement stat;

@@ -67,7 +67,8 @@ public class Controller {
 		return Tablas.crearTabla(rs, names);
 	}	
 	
-	public String[][] sugerirJugada(){
+	public String[][] sugerirJugada(String[][] tab){
+		juego.setTablero(tab);
 		return juego.sugerencia();
 	}
 }
