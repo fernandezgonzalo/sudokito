@@ -221,7 +221,7 @@ public final class viewOne extends javax.swing.JFrame {
         IS = new javax.swing.JMenuItem();
         SO = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        bTopTen = new javax.swing.JMenuItem();
 
 //        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sudokus");
@@ -754,8 +754,8 @@ public final class viewOne extends javax.swing.JFrame {
         });
         informacion.add(jMenuItem2);
 
-        jMenuItem3.setText("Top Ten");
-        informacion.add(jMenuItem3);
+        bTopTen.setText("Top Ten");
+        informacion.add(bTopTen);
 
         jMenuBar1.add(informacion);
 
@@ -989,7 +989,7 @@ private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem bTopTen;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

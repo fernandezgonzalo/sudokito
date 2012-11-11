@@ -1,5 +1,10 @@
 package Controller;
+import java.sql.ResultSet;
+
+import javax.swing.JTable;
+
 import db.dbAPI;
+import ManejoTablas.Tablas;
 import Model.Sudoku;
 import Model.Parser;
 
@@ -55,35 +60,10 @@ public class Controller {
 	
 	
 	
-	public void topTen (){
-		//ResultSet rs = null;
-		//rs = dbAPI.getRank(); 
-		//ResulsetToArray(){
-			
-		}
-		//String[] columNames = {"name","points"};	
-		//JTable table = Tablas.crearTabla(rs,columNames);
-		//vista.setTable(table);
-	
-	 /*private Object[][] ResultSetToArray(ResultSet rs) {
-		 Object obj[][]=null;
-		 try{
-			 rs.last();
-			 ResultSetMetaData rsmd = rs.getMetaData();
-			 int numCols = rsmd.getColumnCount();
-			 int numFils =rs.getRow();
-			 obj=new Object[numFils][numCols];
-			 int j = 0;
-			 rs.beforeFirst();
-			 while (rs.next()){
-				 for (int i=0;i<numCols;i++){
-					 obj[j][i]=rs.getObject(i+1);
-				 }
-				 j++;
-			 }
-		 }catch(Exception e){}
-		 return obj;
-		}
-*/
-	
+	public JTable topTen (){
+		ResultSet rs = null;
+		rs = dbAPI.getRank();
+		String[] names = {"name", "points"};
+		return Tablas.crearTabla(rs, names);
+	}	
 }
