@@ -66,4 +66,8 @@ public class Controller {
 		String[] names = {"name", "points"};
 		return Tablas.crearTabla(rs, names);
 	}	
+	
+	public String[][] sugerirJugada(){
+		return juego.sugerencia();
+	}
 }

@@ -172,7 +172,31 @@ public class Sudoku{
 		}else
 			return tiempo;
 	}
+
+	public String [][] sugerencia (){
+		int aux=0;
+		boolean a =true;
+		for(int i=0;i<=8 && a;i++){
+			for(int j=0; j<=8 && a;j++){
+				if (tablero[i][j].compareTo("")==0)
+					tablero[i][j]=elemEnCero(i,j);
+					a=false;
+			}
+		}
+		return tablero;
+	}
+	private String elemEnCero (int i, int j){
+		int cont=0;
+		for (int i1=0; i1<=i;i1++){
+			for (int j1=0; j1<=i;j1++){
+				cont++;
+			}
+		}
+		return ""+resuelto.charAt(cont);
+	}
+
 }
+
 /*
  * 
  * public int[] ayuda (int x, int y){

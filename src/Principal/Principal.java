@@ -9,5 +9,6 @@ public class Principal {
 		db.dbConn.getInstance();
 		viewOne vista1 = new viewOne();
 		
+		
 	}
 }
