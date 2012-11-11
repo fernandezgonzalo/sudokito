@@ -48,12 +48,12 @@ public class Tablas {
 	 * @param rs
 	 * @return matriz
 	 */
-	private static Object[][] crearMatriz (int tama�oFilas, int tama�oColumnas, ResultSet rs){
-		Object[][] matriz = new Object[tama�oFilas][tama�oColumnas];
+	private static Object[][] crearMatriz (int tamanioFilas, int tamanioColumnas, ResultSet rs){
+		Object[][] matriz = new Object[tamanioFilas][tamanioColumnas];
 		try {
-		for (int f=0;f<tama�oFilas;f++){
+		for (int f=0;f<tamanioFilas;f++){
 			int indice =1; 
-			for (int c=0;c<tama�oColumnas;c++){
+			for (int c=0;c<tamanioColumnas;c++){
 				matriz[f][c]=rs.getString(indice);
 				indice++;
 			}
@@ -75,7 +75,33 @@ public class Tablas {
 	 * @return tabla "objeto JTable ya instanciado"
 	 */
 	public static JTable crearTabla (ResultSet rs, String columNames[]){
-		Object [][] matriz = crearMatriz (tama�oFilas(rs),columNames.length,rs);
+
+		
+		System.out.println("longitud: "+columNames.length);
+		System.out.println("longitud: "+tamanioFilas(rs));
+		
+		Object [][] matriz = crearMatriz (tamanioFilas(rs),columNames.length,rs);
+		
+		System.out.println("saltaaaaa 1");
+		
+		int cont = 0;
+		while (cont<10){
+			System.out.println("saltaaaaa 2 "+cont);
+			System.out.println(matriz[cont][0]);
+			System.out.println("saltaaaaa 33");
+			System.out.println(matriz[cont][1]);
+			System.out.println("saltaaaaa 3");
+			cont++;
+		}
+		System.out.println("saltaaaaa 14");
+			
+			
+			
+			
+			
+//=======
+		Object [][] matriz = crearMatriz (tamanioFilas(rs),columNames.length,rs);
+//>>>>>>> .r34
 		tabla= new JTable(matriz,columNames);
 		return tabla;
 	}
