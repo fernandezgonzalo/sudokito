@@ -11,7 +11,7 @@ public class Parser {
 				if (str.charAt(cont) != '0')
 					m[i][j] = String.valueOf(str.charAt(cont));
 				else
-					m[i][j] = "";
+					m[i][j] = "0";
 				cont++;
 			}
 		}
@@ -22,7 +22,7 @@ public class Parser {
 		String str = new String ();
 		for (int i=0; i<9; i++){
 			for (int j=0; j<9; j++){
-				if (m[i][j] != "")
+				if (m[i][j].compareTo("0")!=0)
 					str=str+m[i][j];
 				else
 					str=str+"0";

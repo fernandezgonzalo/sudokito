@@ -39,6 +39,14 @@ public class Sudoku{
 		tiemoTranscurrido = new Timer ();
 	}
 	
+	public Sudoku (String sem, String res, String[][] tab, String tiempo, String dif){
+		semilla = sem;
+		resuelto = res;
+		tablero = tab;
+		tiemoTranscurrido = new Timer (tiempo);
+		tiempoInicial = new Timer();
+	}
+	
 ////////////////////////////////////////////////////////////////////////
 	public int[] comprobarTablero (String[][] m){
 		int[] result={1,0,0,0,0};
@@ -177,15 +185,20 @@ public class Sudoku{
 	public void setTablero(String[][] tab){
 		tablero = tab;
 	}
+	
+	public void restart (){
+		tablero=Parser.importar(semilla);
+	}
 ////////////////////////////////////////////////////////////////////////
 	public String [][] sugerencia (){
 		int aux=0;
 		boolean a =true;
 		for(int i=0;i<=8 && a;i++){
 			for(int j=0; j<=8 && a;j++){
-				if (tablero[i][j].compareTo("")==0)
+				if (tablero[i][j].compareTo("0")==0){
 					tablero[i][j]=elemEnCero(i,j);
 					a=false;
+				}
 			}
 		}
 		return tablero;

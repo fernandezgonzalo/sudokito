@@ -710,6 +710,11 @@ public final class viewOne extends javax.swing.JFrame {
 
         cargarPartida.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         cargarPartida.setText("Cargar Partida");
+        cargarPartida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	cargarPartidaActionPerformed(evt);
+            }
+        });
         archivo.add(cargarPartida);
 
         GP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
@@ -855,6 +860,11 @@ public final class viewOne extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+private void cargarPartidaActionPerformed(java.awt.event.ActionEvent evt) {
+	setTablero(controller.cargar());
+}
+
+    
 private void GPActionPerformed(java.awt.event.ActionEvent evt) {
 	controller.guardarPartida(getTablero(), getDificultad());
 	JOptionPane.showMessageDialog(this, "La partida se ha guardado correctamente.", "",JOptionPane.WARNING_MESSAGE);
@@ -905,6 +915,7 @@ private void verificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 
 private void SugerirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SugerirActionPerformed
 	setTablero(controller.sugerirJugada(getTablero()));
+	//System.out.println(controller.sugerirJugada(getTablero()));
 }//GEN-LAST:event_SugerirActionPerformed
 
 private void termineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_termineActionPerformed
@@ -920,8 +931,11 @@ private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//G
 		int cont = 0;  
 		for (int f=0; f<9; f++){
             for (int c=0; c<9; c++){
-               m[f][c] = ListtextField.get(cont).getText();
-               cont++;
+            	if (ListtextField.get(cont).getText().compareTo(" ")!=0){
+            		m[f][c] = ListtextField.get(cont).getText();
+               	} else
+               		m[f][c] = "0";
+            	cont++;
             }
 		}
 		return m;
@@ -937,10 +951,10 @@ private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//G
 		TextField asd;
 		for(int i=0;i<9;i++){
 			for(int j=0;j<9;j++){
-				if ((matriz[i][j])!=""){
+				if ((matriz[i][j])!="0"){
 					asd = ListtextField.get(cont);
 					asd.setFont(font1);
-					asd.setText(" "+matriz[i][j]);
+					asd.setText(matriz[i][j]);
 					asd.setEditable(false);
 					ListtextField.set(cont,asd);
 				}else{

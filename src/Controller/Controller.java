@@ -1,5 +1,6 @@
 package Controller;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JTable;
 
@@ -44,6 +45,7 @@ public class Controller {
 	public String[][] restart(){
 		//vista.setTablero(Parser.importar(juego.getSemilla()));
 		juego.restartTimeInic();
+		juego.restart(); 
 		return (Parser.importar(juego.getSemilla()));
 	}
 	
@@ -70,5 +72,27 @@ public class Controller {
 	public String[][] sugerirJugada(String[][] tab){
 		juego.setTablero(tab);
 		return juego.sugerencia();
+	}
+	
+	public String[][] cargar (){
+		ResultSet rs = dbAPI.getSave();
+		try {
+			String tab = (rs.getString("sudokuActual"));
+			//System.out.println ("tab: "+tab);
+			String tiempo = (rs.getString("time"));
+			//System.out.println("tiempo: "+tiempo);
+			String sem = (rs.getString("semilla"));
+			//System.out.println("sem: "+sem);
+			String dif = (rs.getString("dif"));
+			//System.out.println ("dif: "+dif);
+			String res = (rs.getString("resuelto"));
+			//System.out.println("res: "+res);
+			String[][] m = Parser.importar(tab);
+			juego = new Sudoku (sem,res,m,tiempo,dif);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return juego.getTablero();
 	}
 }

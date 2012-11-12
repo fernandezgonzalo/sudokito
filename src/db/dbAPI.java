@@ -52,14 +52,14 @@ public class dbAPI {
 			System.out.println(":: ERROR getSave-SELECT");
 			ex.printStackTrace();
 		}
-		try {
+		/*try {
 			query = "DELETE FROM Save";
 			stat = dbConn.getInstance().createStatement();
 			stat.executeUpdate(query);
 		} catch (Exception ex) {
 			System.out.println(":: ERROR getSave-DELETE");
 			ex.printStackTrace();
-		}
+		}*/
 		return rs;
 	}
 
