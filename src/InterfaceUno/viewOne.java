@@ -55,11 +55,12 @@ public final class viewOne extends javax.swing.JFrame {
        ListtextField.add(celda8);
        ListtextField.add(celda9);
        ListtextField.add(celda10);
+       ListtextField.add(celda11);
        ListtextField.add(celda12);
        ListtextField.add(celda13);
        ListtextField.add(celda14);
        ListtextField.add(celda15);
-       ListtextField.add(celda15);
+       ListtextField.add(celda16);
        ListtextField.add(celda17);
        ListtextField.add(celda18);
        ListtextField.add(celda19);
@@ -120,7 +121,6 @@ public final class viewOne extends javax.swing.JFrame {
        ListtextField.add(celda74);
        ListtextField.add(celda75);
        ListtextField.add(celda76);
-       ListtextField.add(celda77);
        ListtextField.add(celda77);
        ListtextField.add(celda78);
        ListtextField.add(celda79);
@@ -681,7 +681,7 @@ public final class viewOne extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        termine.setText("¿¿Termine??");
+        termine.setText("ï¿½ï¿½Termine??");
         termine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 termineActionPerformed(evt);
@@ -695,7 +695,7 @@ public final class viewOne extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("(Opción para comprobar si ha finalizado el juego)");
+        jLabel1.setText("(Opciï¿½n para comprobar si ha finalizado el juego)");
 
         archivo.setText("Archivo");
 
@@ -754,7 +754,7 @@ public final class viewOne extends javax.swing.JFrame {
 
         jMenuBar1.add(archivo);
 
-        informacion.setText("Información");
+        informacion.setText("Informaciï¿½n");
         informacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 informacionActionPerformed(evt);
@@ -771,7 +771,7 @@ public final class viewOne extends javax.swing.JFrame {
         informacion.add(Int);
 
         IS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        IS.setText("Información del Sudoku");
+        IS.setText("Informaciï¿½n del Sudoku");
         IS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ISActionPerformed(evt);

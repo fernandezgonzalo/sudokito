@@ -193,24 +193,17 @@ public class Sudoku{
 	public String [][] sugerencia (){
 		int aux=0;
 		boolean a =true;
+		System.out.println(resuelto);
 		for(int i=0;i<=8 && a;i++){
 			for(int j=0; j<=8 && a;j++){
 				if (tablero[i][j].compareTo("0")==0){
-					tablero[i][j]=elemEnCero(i,j);
+					tablero[i][j]=""+resuelto.charAt(aux);
 					a=false;
 				}
+				aux++;
 			}
 		}
 		return tablero;
-	}
-	private String elemEnCero (int i, int j){
-		int cont=0;
-		for (int i1=0; i1<=i;i1++){
-			for (int j1=0; j1<=i;j1++){
-				cont++;
-			}
-		}
-		return ""+resuelto.charAt(cont);
 	}
 
 }
