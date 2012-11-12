@@ -20,6 +20,7 @@ public class viewIntrucciones extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+    	setAlwaysOnTop(true);
     	setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -36,7 +37,7 @@ public class viewIntrucciones extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("En la fila azul sólo falta el 2..\nEn la columna amarilla también falta\nun número.En este caso tambien\nes el 2.\nEn el cuadrado rojo faltan 2 nros.\nQue serian el 3 y 9,pero hay una\nrestriccion a la hora de colocarlos,\nya que si ponemos el 3 en la primera\ncolumna,la solucion no va a ser\nvalida ya que se esta repitiendo en\nla fila azul,por ende se debe\ncolocar en la otra tercera columna;y\nel 9 se deberia colocar en la\nprimera columna.");
+        jTextArea1.setText("En la fila azul solo falta el 2..\nEn la columna amarilla tambien falta\nun numero.En este caso tambien\nes el 2.\nEn el cuadrado rojo faltan 2 nros.\nQue serian el 3 y 9,pero hay una\nrestriccion a la hora de colocarlos,\nya que si ponemos el 3 en la primera\ncolumna,la solucion no va a ser\nvalida ya que se esta repitiendo en\nla fila azul,por ende se debe\ncolocar en la otra tercera columna;y\nel 9 se deberia colocar en la\nprimera columna.");
         jTextArea1.setEditable(false);
 		jScrollPane1.setViewportView(jTextArea1);
 

@@ -2,7 +2,6 @@ package InterfaceUno;
 
 import java.awt.Font;
 import java.awt.TextField;
-
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import java.util.LinkedList;
@@ -227,13 +226,13 @@ public final class viewOne extends javax.swing.JFrame {
         NP = new javax.swing.JMenuItem();
         cargarPartida = new javax.swing.JMenuItem();
         GP = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        TT = new javax.swing.JMenuItem();
-        S = new javax.swing.JMenuItem();
+        elegirDif = new javax.swing.JMenuItem();
+        topTen = new javax.swing.JMenuItem();
+        Reiniciar = new javax.swing.JMenuItem();
         informacion = new javax.swing.JMenu();
         Int = new javax.swing.JMenuItem();
         IS = new javax.swing.JMenuItem();
-        SO = new javax.swing.JMenuItem();
+        Resolver = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         ayuda = new javax.swing.JMenu();
         verificar = new javax.swing.JMenuItem();
@@ -681,7 +680,7 @@ public final class viewOne extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        termine.setText("��Termine??");
+        termine.setText("Termine???");
         termine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 termineActionPerformed(evt);
@@ -726,35 +725,35 @@ public final class viewOne extends javax.swing.JFrame {
         });
         archivo.add(GP);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Nivel de Dificultad");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        elegirDif.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        elegirDif.setText("Nivel de Dificultad");
+        elegirDif.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+            	elegirDifActionPerformed(evt);
             }
         });
-        archivo.add(jMenuItem1);
+        archivo.add(elegirDif);
 
-        TT.setText("Top Ten");
-        TT.addActionListener(new java.awt.event.ActionListener() {
+        topTen.setText("Top Ten");
+        topTen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TTActionPerformed(evt);
+            	topTenActionPerformed(evt);
             }
         });
-        archivo.add(TT);
+        archivo.add(topTen);
 
-        S.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
-        S.setText("Salir");
-        S.addActionListener(new java.awt.event.ActionListener() {
+        Reiniciar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
+        Reiniciar.setText("Reiniciar");
+        Reiniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SActionPerformed(evt);
+                ReiniciarActionPerformed(evt);
             }
         });
-        archivo.add(S);
+        archivo.add(Reiniciar);
 
         jMenuBar1.add(archivo);
 
-        informacion.setText("Informaci�n");
+        informacion.setText("Extras");
         informacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 informacionActionPerformed(evt);
@@ -771,7 +770,7 @@ public final class viewOne extends javax.swing.JFrame {
         informacion.add(Int);
 
         IS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        IS.setText("Informaci�n del Sudoku");
+        IS.setText("Informacion del Sudoku");
         IS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ISActionPerformed(evt);
@@ -779,9 +778,14 @@ public final class viewOne extends javax.swing.JFrame {
         });
         informacion.add(IS);
 
-        SO.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
-        SO.setText("Sudokus Online");
-        informacion.add(SO);
+        Resolver.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        Resolver.setText("Resolver");
+        Resolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResolverActionPerformed(evt);
+            }
+        });
+        informacion.add(Resolver);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem2.setText("About Sudoku");
@@ -860,6 +864,10 @@ public final class viewOne extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+private void ResolverActionPerformed(java.awt.event.ActionEvent evt) {
+	setTablero(controller.resolver());
+}    
+    
 private void cargarPartidaActionPerformed(java.awt.event.ActionEvent evt) {
 	setTablero(controller.cargar());
 }
@@ -874,12 +882,13 @@ private void NPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:even
 	setTablero(controller.nuevoJuego(getDificultad()));
 }
 
-private void SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SActionPerformed
-    dispose();// TODO add your handling code here:
+private void ReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SActionPerformed
+	setTablero(controller.restart());
 }//GEN-LAST:event_SActionPerformed
 
-private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+private void elegirDifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
     VD.setVisible(true);
+    System.out.println(getDificultad());
 }//GEN-LAST:event_jMenuItem1ActionPerformed
 
 private void IntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntActionPerformed
@@ -901,8 +910,10 @@ private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     VTT.setVisible(true);
 }//GEN-LAST:event_informacionActionPerformed
 
-private void TTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TTActionPerformed
-// TODO add your handling code here:
+private void topTenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TTActionPerformed
+	viewTopTen view = new viewTopTen();
+	view.setTable(controller.topTen());
+	view.setVisible(true);
 }//GEN-LAST:event_TTActionPerformed
 
 private void ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaActionPerformed
@@ -973,10 +984,10 @@ private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//G
     private javax.swing.JMenuItem IS;
     private javax.swing.JMenuItem Int;
     private javax.swing.JMenuItem NP;
-    private javax.swing.JMenuItem S;
-    private javax.swing.JMenuItem SO;
+    private javax.swing.JMenuItem Reiniciar;
+    private javax.swing.JMenuItem Resolver;
     private javax.swing.JMenuItem Sugerir;
-    private javax.swing.JMenuItem TT;
+    private javax.swing.JMenuItem topTen;
     private javax.swing.JMenu archivo;
     private javax.swing.JMenu ayuda;
     private javax.swing.JButton cambiarInterfaz;
@@ -1065,7 +1076,7 @@ private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//G
     private javax.swing.JMenu informacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem elegirDif;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton termine;

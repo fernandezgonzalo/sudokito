@@ -20,6 +20,7 @@ public class viewAbout extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+    	setAlwaysOnTop(true);
     	setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -43,11 +44,11 @@ public class viewAbout extends javax.swing.JFrame {
         jTextArea1.setEditable(false);
 		jTextArea1.setFont(new java.awt.Font("Vani", 0, 13)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Sudokito es un aplicación Open Source de la materia\nIng. de Software de la UNRC,en el cual\nse desarrolla una versión básica del popular\nSUDOKU,esta desarrollado en JAVA.\nRealizado por:\n-Dr Pérez Garcia, Agustín.\n-Dr Ruano,Mariano.\n-Dr Ocampo,Esteban.\n-Ayudante Ganzalito Fernandez.");
+        jTextArea1.setText("Sudokito es un aplicacion Open Source de la materia\nIng. de Software de la UNRC,en el cual\nse desarrolla una version basica del popular\nSUDOKU,esta desarrollado en JAVA.\nRealizado por:\n-Dr Perez Garcia, Agustin.\n-Dr Ruano,Mariano.\n-Dr Ocampo,Esteban.\n-Ayudante Ganzalito Fernandez.");
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14));
-        jLabel2.setText("versión 10.12 ");
+        jLabel2.setText("version 10.12 ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
