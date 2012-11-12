@@ -1,12 +1,18 @@
 package InterfaceDos;
 
-import view.interfaceUno.*;
 import java.awt.Font;
 import java.awt.TextField;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import java.util.LinkedList;
 import javax.swing.JTextField;
-        
+
+import View.viewAbout;
+import View.viewDificultad;
+import View.viewInfoSudoku;
+import View.viewIntrucciones;
+import View.viewTopTen;
+import Controller.Controller;        
 /*
  * viewDos.java
  *
@@ -21,12 +27,14 @@ public final class viewDos extends javax.swing.JFrame {
     
     viewDificultad VD =new viewDificultad();
     viewTopTen VTT = new viewTopTen();
+    Controller controller;
 
     /** Creates new form viewDos */
     public viewDos() {
         initComponents();
         setTexFieldInList();
-        setTablero();
+        controller= new Controller();
+        this.setVisible(true);
     }
    
     public String getDificultad(){
@@ -47,11 +55,12 @@ public final class viewDos extends javax.swing.JFrame {
        ListtextField.add(celda8);
        ListtextField.add(celda9);
        ListtextField.add(celda10);
+       ListtextField.add(celda11);
        ListtextField.add(celda12);
        ListtextField.add(celda13);
        ListtextField.add(celda14);
        ListtextField.add(celda15);
-       ListtextField.add(celda15);
+       ListtextField.add(celda16);
        ListtextField.add(celda17);
        ListtextField.add(celda18);
        ListtextField.add(celda19);
@@ -112,7 +121,6 @@ public final class viewDos extends javax.swing.JFrame {
        ListtextField.add(celda74);
        ListtextField.add(celda75);
        ListtextField.add(celda76);
-       ListtextField.add(celda77);
        ListtextField.add(celda77);
        ListtextField.add(celda78);
        ListtextField.add(celda79);
@@ -215,7 +223,7 @@ public final class viewDos extends javax.swing.JFrame {
         celda79 = new java.awt.TextField();
         celda80 = new java.awt.TextField();
         celda81 = new java.awt.TextField();
-        jButton1 = new javax.swing.JButton();
+        cambiarInterfaz = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -417,7 +425,7 @@ public final class viewDos extends javax.swing.JFrame {
 
         celda81.setBackground(new java.awt.Color(174, 174, 249));
 
-        jButton1.setText("Cambio Interfaz");
+        cambiarInterfaz.setText("Cambio Interfaz");
 
         jButton2.setText("Nivel Dificultad");
 
@@ -608,14 +616,14 @@ public final class viewDos extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(348, 348, 348)
-                .addComponent(jButton1)
+                .addComponent(cambiarInterfaz)
                 .addContainerGap(321, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cambiarInterfaz, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -820,9 +828,24 @@ public final class viewDos extends javax.swing.JFrame {
         });
         archivo.add(NP);
 
+        //111111111111111111111111111111111111111111111
+
         GP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         GP.setText("Guardar Partida");
+        GP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GPActionPerformed(evt);
+            }
+        });
         archivo.add(GP);
+        //2222222222222222222222222222222222222222222
+        cambiarInterfaz.setText("Cambiar Interfaz");
+        cambiarInterfaz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cambiarInterfazActionPerformed(evt);
+            }
+        });
+        //3333333333333333333333333333333333333333333
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setText("Nivel de Dificultad");
@@ -844,7 +867,7 @@ public final class viewDos extends javax.swing.JFrame {
 
         jMenuBar1.add(archivo);
 
-        informacion.setText("Información");
+        informacion.setText("Informaciï¿½n");
         informacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 informacionActionPerformed(evt);
@@ -861,7 +884,7 @@ public final class viewDos extends javax.swing.JFrame {
         informacion.add(Int);
 
         IS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        IS.setText("Información del Sudoku");
+        IS.setText("Informacion del Sudoku");
         IS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ISActionPerformed(evt);
@@ -908,10 +931,19 @@ public final class viewDos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarInterfazActionPerformed
+   // TODO add your handling code here:
+   }//GEN-LAST:event_cambiarInterfazActionPerformed
 
 private void NPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NPActionPerformed
 // TODO add your handling code here:
 }//GEN-LAST:event_NPActionPerformed
+
+private void GPActionPerformed(java.awt.event.ActionEvent evt) {
+	controller.guardarPartida(getTablero(), getDificultad());
+	JOptionPane.showMessageDialog(this, "La partida se ha guardado correctamente.", "",JOptionPane.WARNING_MESSAGE);
+}
 
 private void SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SActionPerformed
     dispose();// TODO add your handling code here:
@@ -935,6 +967,7 @@ private void ISActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:even
     VIS.setVisible(true);
 }//GEN-LAST:event_ISActionPerformed
 
+
 private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
     viewAbout VA =new viewAbout();
     VA.setVisible(true);
@@ -943,11 +976,47 @@ private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_informacionActionPerformed
     VTT.setVisible(true);
 }//GEN-LAST:event_informacionActionPerformed
-        public void setTablero(){
-           
-       
+public String[][] getTablero(){
+	String[][] m = new String[9][9];
+	int cont = 0;  
+	for (int f=0; f<9; f++){
+        for (int c=0; c<9; c++){
+        	if (ListtextField.get(cont).getText().compareTo(" ")!=0){
+        		m[f][c] = ListtextField.get(cont).getText();
+           	} else
+           		m[f][c] = "0";
+        	cont++;
         }
+	}
+	return m;
+}
 
+public void setTablero(String[][] matriz){
+	//Semilla
+	Font font1 = new Font("Verdana", Font.BOLD, 30);
+	//noSemilla
+	Font font2 = new Font("Verdana", Font.PLAIN, 31);
+
+	int cont = 0;
+	TextField asd;
+	for(int i=0;i<9;i++){
+		for(int j=0;j<9;j++){
+			if ((matriz[i][j])!="0"){
+				asd = ListtextField.get(cont);
+				asd.setFont(font1);
+				asd.setText(matriz[i][j]);
+				asd.setEditable(false);
+				ListtextField.set(cont,asd);
+			}else{
+				asd = ListtextField.get(cont);
+				asd.setFont(font2);
+				asd.setText(" ");
+				asd.setEditable(true);
+			}
+			cont++;
+		}
+	}
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem GP;
     private javax.swing.JMenuItem IS;
@@ -1038,7 +1107,7 @@ private void informacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private java.awt.TextField celda81;
     private java.awt.TextField celda9;
     private javax.swing.JMenu informacion;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton cambiarInterfaz;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

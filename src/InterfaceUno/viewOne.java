@@ -125,7 +125,7 @@ public final class viewOne extends javax.swing.JFrame {
        ListtextField.add(celda79);
        ListtextField.add(celda80);
        ListtextField.add(celda81);
-    }
+   }
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -791,6 +791,8 @@ public final class viewOne extends javax.swing.JFrame {
         jMenuItem2.setText("About Sudoku");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	setAlwaysOnTop(true);
+
                 jMenuItem2ActionPerformed(evt);
             }
         });
