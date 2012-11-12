@@ -2,6 +2,7 @@ package Controller;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 import db.dbAPI;
@@ -55,15 +56,10 @@ public class Controller {
 		ResultSet rs = dbAPI.getSave();
 		try {
 			String tab = (rs.getString("sudokuActual"));
-			//System.out.println ("tab: "+tab);
 			String tiempo = (rs.getString("time"));
-			//System.out.println("tiempo: "+tiempo);
 			String sem = (rs.getString("semilla"));
-			//System.out.println("sem: "+sem);
 			String dif = (rs.getString("dif"));
-			//System.out.println ("dif: "+dif);
 			String res = (rs.getString("resuelto"));
-			//System.out.println("res: "+res);
 			String[][] m = Parser.importar(tab);
 			juego = new Sudoku (sem,res,m,tiempo,dif);
 		} catch (SQLException e) {
@@ -71,5 +67,10 @@ public class Controller {
 			e.printStackTrace();
 		}
 		return juego.getTablero();
+	}
+	
+	public int[] compobar (String[][] m){
+		juego.setTablero(m);
+		return juego.comprobarTablero();
 	}
 }

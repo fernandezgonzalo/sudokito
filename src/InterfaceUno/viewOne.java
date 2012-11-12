@@ -13,6 +13,7 @@ import View.viewInfoSudoku;
 import View.viewIntrucciones;
 import View.viewTopTen;
 import Controller.Controller;
+import InterfaceDos.viewDos;
 /*
  * viewOne.java
  *
@@ -694,7 +695,7 @@ public final class viewOne extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("(Opci�n para comprobar si ha finalizado el juego)");
+        jLabel1.setText("(Opcion para comprobar si ha finalizado el juego)");
 
         archivo.setText("Archivo");
 
@@ -890,7 +891,6 @@ private void ReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 
 private void elegirDifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
     VD.setVisible(true);
-    System.out.println(getDificultad());
 }//GEN-LAST:event_jMenuItem1ActionPerformed
 
 private void IntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntActionPerformed
@@ -923,7 +923,11 @@ private void ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:e
 }//GEN-LAST:event_ayudaActionPerformed
 
 private void verificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verificarActionPerformed
-// TODO add your handling code here:
+	int[] array = controller.compobar(getTablero());
+	if (array[0]==0)
+		JOptionPane.showMessageDialog(this, "La posicin ("+array[1]+","+array[2]+") "+"esta mal.", "",JOptionPane.WARNING_MESSAGE);
+	else
+		JOptionPane.showMessageDialog(this,"No hay posiciones erroneas.", "",JOptionPane.WARNING_MESSAGE);	
 }//GEN-LAST:event_verificarActionPerformed
 
 private void SugerirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SugerirActionPerformed
@@ -936,7 +940,10 @@ private void termineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
 }//GEN-LAST:event_termineActionPerformed
 
 private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarInterfazActionPerformed
-// TODO add your handling code here:
+	viewDos vista2 = new viewDos();
+	vista2.setTablero(getTablero());
+	this.setVisible(false);
+	vista2.setVisible(true);
 }//GEN-LAST:event_cambiarInterfazActionPerformed
 
 	public String[][] getTablero(){
@@ -945,7 +952,7 @@ private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//G
 		for (int f=0; f<9; f++){
             for (int c=0; c<9; c++){
             	if (ListtextField.get(cont).getText().compareTo(" ")!=0){
-            		m[f][c] = ListtextField.get(cont).getText();
+            		m[f][c] = ListtextField.get(cont).getText().trim();
                	} else
                		m[f][c] = "0";
             	cont++;

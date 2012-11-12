@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 public class Sudoku{
 	private String[] strAux;
@@ -48,7 +49,26 @@ public class Sudoku{
 	}
 	
 ////////////////////////////////////////////////////////////////////////
-	public int[] comprobarTablero (String[][] m){
+
+	public int[] comprobarTablero(){
+		int cont=0;
+		
+		int[] result = {1,0,0};
+		String[][] mAux = Parser.importar(resuelto);
+		for (int i=0; i<9; i++){
+			for (int j=0; j<9; j++){
+				if (tablero[i][j].compareTo("0")!=0){
+					if (tablero[i][j].compareTo(mAux[i][j])!=0){
+						result[0]=0;result[1]=i+1;result[2]=j+1;
+					}
+				}
+				cont++;
+			}
+		}
+		return result;
+	}
+			int[] result={1,0,0,0,0};
+	private int[] comprobarTablero (String[][] m){
 		int[] result={1,0,0,0,0};
 		result= compCuadrados(m);
 		if (result[0]==1) result=compColumnas(m);
@@ -74,7 +94,7 @@ public class Sudoku{
 		for (int x1=x; (x1<=x+2)&&(result[0]==1); x1++){
 			for (int y1=y; (y1<=y+2)&&(result[0]==1); y1++){
 				if (!(aux.contains(m[x1][y1]))){
-					if (m[x1][y1]!="0")
+					if (m[x1][y1].compareTo("0")!=0)
 						aux.add(m[x1][y1]);
 				}else{
 					result[0]=0;
