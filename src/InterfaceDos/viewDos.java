@@ -11,8 +11,10 @@ import View.viewAbout;
 import View.viewDificultad;
 import View.viewInfoSudoku;
 import View.viewIntrucciones;
+import View.viewSave;
 import View.viewTopTen;
 import Controller.Controller;
+import InterfaceUno.viewOne;
         
 /*
  * viewDos.java
@@ -436,7 +438,7 @@ public final class viewDos extends javax.swing.JFrame {
         cambioInterfaz.setText("Cambiar Interfaz");
         cambioInterfaz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cambioInterfazActionPerformed(evt);
+                cambiarInterfazActionPerformed(evt);
             }
         });
 
@@ -501,6 +503,7 @@ public final class viewDos extends javax.swing.JFrame {
                 cargarPartidaActionPerformed(evt);
             }
         });
+        
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1074,16 +1077,36 @@ private void sugerirJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN
 	setTablero(controller.sugerirJugada(getTablero()));
 }//GEN-LAST:event_sugerirJugadaActionPerformed
 
-private void cambioInterfazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambioInterfazActionPerformed
-// TODO add your handling code here:
-}//GEN-LAST:event_cambioInterfazActionPerformed
+private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarInterfazActionPerformed
+		int[] array = controller.compobar(getTablero());
+		if (array[0]==0)
+			JOptionPane.showMessageDialog(this, "La posicin ("+array[1]+","+array[2]+") "+"esta mal, no se " +
+												"puede cambiar de interfaz.", "",JOptionPane.WARNING_MESSAGE);
+		else{
+			viewOne vista1 = new viewOne();
+			vista1.setTablero(getTablero());
+			this.setVisible(false);
+			vista1.setVisible(true);
+		}
+	}//GEN-LAST:event_cambiarInterfazActionPerformed}//GEN-LAST:event_cambioInterfazActionPerformed
 
 private void termineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_termineActionPerformed
-// TODO add your handling code here:
+	int[] array = controller.compobar(getTablero());
+	if (array[0]==0)
+		JOptionPane.showMessageDialog(this, "La posicin ("+array[1]+","+array[2]+") "+"esta mal.", "",JOptionPane.WARNING_MESSAGE);
+	else{
+		controller.terminoTiempo();
+		viewSave view = new viewSave(controller);
+		view.setVisible(true);
+	}
 }//GEN-LAST:event_termineActionPerformed
 
 private void verificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verificarActionPerformed
-// TODO add your handling code here:
+	int[] array = controller.compobar(getTablero());
+	if (array[0]==0)
+		JOptionPane.showMessageDialog(this, "La posicion ("+array[1]+","+array[2]+") "+"esta mal.", "",JOptionPane.WARNING_MESSAGE);
+	else
+		JOptionPane.showMessageDialog(this,"No hay posiciones erroneas.", "",JOptionPane.WARNING_MESSAGE);	
 }//GEN-LAST:event_verificarActionPerformed
 
 private void reiniciarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reiniciarPartidaActionPerformed
@@ -1099,9 +1122,11 @@ private void cargarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN
 }//GEN-LAST:event_cargarPartidaActionPerformed
 
 private void GPActionPerformed(java.awt.event.ActionEvent evt) {
-	controller.guardarPartida(getTablero(), getDificultad());
+	controller.guardarPartida(getTablero());
 	JOptionPane.showMessageDialog(this, "La partida se ha guardado correctamente.", "",JOptionPane.WARNING_MESSAGE);
 }
+
+
 private void IntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntActionPerformed
     viewIntrucciones VI= new viewIntrucciones();
     VI.setVisible(true);
@@ -1124,7 +1149,7 @@ public String[][] getTablero(){
 	for (int f=0; f<9; f++){
         for (int c=0; c<9; c++){
         	if (ListtextField.get(cont).getText().compareTo(" ")!=0){
-        		m[f][c] = ListtextField.get(cont).getText();
+        		m[f][c] = ListtextField.get(cont).getText().trim();
            	} else
            		m[f][c] = "0";
         	cont++;
@@ -1132,6 +1157,7 @@ public String[][] getTablero(){
 	}
 	return m;
 }
+
 
 public void setTablero(String[][] matriz){
 	//Semilla
