@@ -941,11 +941,23 @@ private void termineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
 	if (array[0]==0)
 		JOptionPane.showMessageDialog(this, "La posicin ("+array[1]+","+array[2]+") "+"esta mal.", "",JOptionPane.WARNING_MESSAGE);
 	else{
-		controller.terminoTiempo();
-		viewSave view = new viewSave(controller);
-		view.setVisible(true);
+		if (!aux())
+			JOptionPane.showMessageDialog(this, "Tiene casilleros sin completar", "",JOptionPane.WARNING_MESSAGE);
+		else{
+			controller.terminoTiempo();
+			viewSave view = new viewSave(controller);
+			view.setVisible(true);
+		}
 	}
 }//GEN-LAST:event_termineActionPerformed
+private boolean aux(){
+	boolean a=true;
+	for(int i=0;i<(ListtextField.size()-1);i++){
+		if (ListtextField.get(i).getText().compareTo(" ")==0)
+			a=false;
+	}
+	return a;
+}
 
 private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarInterfazActionPerformed
 	int[] array = controller.compobar(getTablero());
@@ -955,10 +967,15 @@ private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//G
 	else{
 		viewDos vista2 = new viewDos();
 		vista2.setTablero(getTablero());
+		vista2.setController(controller);
 		this.setVisible(false);
 		vista2.setVisible(true);
 	}
 }//GEN-LAST:event_cambiarInterfazActionPerformed
+
+	public void setController(Controller cont){
+		controller = cont;
+	}
 
 	public String[][] getTablero(){
 		String[][] m = new String[9][9];
