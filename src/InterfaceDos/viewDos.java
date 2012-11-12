@@ -442,14 +442,14 @@ public final class viewDos extends javax.swing.JFrame {
             }
         });
 
-        termine.setText("¿¿Termine??");
+        termine.setText("Termine???");
         termine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 termineActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("(Opción para comprobar si ha finalizado el juego)");
+        jLabel2.setText("(Opcion para comprobar si ha finalizado el juego)");
 
         sugerirJugada.setText("Sugerir Jugada");
         sugerirJugada.addActionListener(new java.awt.event.ActionListener() {
@@ -1008,7 +1008,7 @@ public final class viewDos extends javax.swing.JFrame {
 
         jMenuBar1.add(archivo);
 
-        informacion.setText("Información");
+        informacion.setText("Informacion");
         informacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 informacionActionPerformed(evt);
