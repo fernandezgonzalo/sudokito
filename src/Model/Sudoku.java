@@ -193,7 +193,6 @@ public class Sudoku{
 	public String [][] sugerencia (){
 		int aux=0;
 		boolean a =true;
-		System.out.println(resuelto);
 		for(int i=0;i<=8 && a;i++){
 			for(int j=0; j<=8 && a;j++){
 				if (tablero[i][j].compareTo("0")==0){
