@@ -33,7 +33,7 @@ public class viewIntrucciones extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Corbel", 1, 24));
         jLabel1.setText("Intrucciones :");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/tablero.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/tablero.jpg"))); // NOI18N
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
