@@ -114,4 +114,9 @@ public class Timer{
 		result = result+seg3;
 		return result;
 	}
+////////////////////////////////////////////////////////////////////////
+	public int getEnSegs (){
+		int result = horaASeg(hora)+minASeg(minutos)+segundos;
+		return result;
+	}
 }

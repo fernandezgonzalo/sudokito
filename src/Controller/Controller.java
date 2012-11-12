@@ -9,6 +9,7 @@ import db.dbAPI;
 import ManejoTablas.Tablas;
 import Model.Sudoku;
 import Model.Parser;
+import Model.Timer;
 
 
 public class Controller {
@@ -33,9 +34,9 @@ public class Controller {
 	}
 	
 	
-	public void guardarPartida (String[][] tablero, String dificultad){
+	public void guardarPartida (String[][] tablero){
 		String sudokuActual = Parser.exportar(tablero);
-		dbAPI.newSave(sudokuActual, juego.calcularTiempo(), juego.getSemilla(), dificultad, juego.getResuelto());
+		dbAPI.newSave(sudokuActual, juego.calcularTiempo(), juego.getSemilla(), juego.getDif(), juego.getResuelto());
 	}
 	
 	
@@ -72,5 +73,24 @@ public class Controller {
 	public int[] compobar (String[][] m){
 		juego.setTablero(m);
 		return juego.comprobarTablero();
+	}
+	
+	public void terminoTiempo (){
+		juego.setTime(juego.calcularTiempo());
+	}
+	
+	public void guardarRank (String nombre){
+		int puntos=0;
+		int segs = (new Timer(juego.getTrans())).getEnSegs();
+		String dif = juego.getDif();
+		if (dif=="Easy")
+			puntos=segs;
+		else{
+			if (dif=="Medium")
+				puntos=segs*3;
+			else
+				puntos=segs*5;
+		}
+		dbAPI.newRowRank(nombre, puntos);
 	}
 }

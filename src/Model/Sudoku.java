@@ -182,8 +182,16 @@ public class Sudoku{
 		return resuelto;
 	}
 	
-	public void setTime (){
-		tiemoTranscurrido = new Timer();
+	public String getDif (){
+		return dificultad;
+	}
+	
+	public String getTrans(){
+		return tiemoTranscurrido.toString();
+	}
+	
+	public void setTime (String time){
+		tiemoTranscurrido = new Timer(time);
 	}
 ////////////////////////////////////////////////////////////////////////	
 	public void restartTimeInic (){

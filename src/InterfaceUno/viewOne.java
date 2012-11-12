@@ -11,6 +11,7 @@ import View.viewAbout;
 import View.viewDificultad;
 import View.viewInfoSudoku;
 import View.viewIntrucciones;
+import View.viewSave;
 import View.viewTopTen;
 import Controller.Controller;
 import InterfaceDos.viewDos;
@@ -877,7 +878,7 @@ private void cargarPartidaActionPerformed(java.awt.event.ActionEvent evt) {
 
     
 private void GPActionPerformed(java.awt.event.ActionEvent evt) {
-	controller.guardarPartida(getTablero(), getDificultad());
+	controller.guardarPartida(getTablero());
 	JOptionPane.showMessageDialog(this, "La partida se ha guardado correctamente.", "",JOptionPane.WARNING_MESSAGE);
 }
 
@@ -936,7 +937,14 @@ private void SugerirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
 }//GEN-LAST:event_SugerirActionPerformed
 
 private void termineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_termineActionPerformed
-// TODO add your handling code here:
+	int[] array = controller.compobar(getTablero());
+	if (array[0]==0)
+		JOptionPane.showMessageDialog(this, "La posicin ("+array[1]+","+array[2]+") "+"esta mal.", "",JOptionPane.WARNING_MESSAGE);
+	else{
+		controller.terminoTiempo();
+		viewSave view = new viewSave(controller);
+		view.setVisible(true);
+	}
 }//GEN-LAST:event_termineActionPerformed
 
 private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarInterfazActionPerformed
