@@ -948,10 +948,16 @@ private void termineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
 }//GEN-LAST:event_termineActionPerformed
 
 private void cambiarInterfazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarInterfazActionPerformed
-	viewDos vista2 = new viewDos();
-	vista2.setTablero(getTablero());
-	this.setVisible(false);
-	vista2.setVisible(true);
+	int[] array = controller.compobar(getTablero());
+	if (array[0]==0)
+		JOptionPane.showMessageDialog(this, "La posicin ("+array[1]+","+array[2]+") "+"esta mal, no se " +
+											"puede cambiar de interfaz.", "",JOptionPane.WARNING_MESSAGE);
+	else{
+		viewDos vista2 = new viewDos();
+		vista2.setTablero(getTablero());
+		this.setVisible(false);
+		vista2.setVisible(true);
+	}
 }//GEN-LAST:event_cambiarInterfazActionPerformed
 
 	public String[][] getTablero(){
